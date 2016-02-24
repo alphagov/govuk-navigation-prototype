@@ -125,23 +125,24 @@ router.get('/running-an-mot-test-station', function (req, res) {
 
 router.get('/mot-test-service-modernisation', function (req, res) {
   var taxonSlug = "mot-test-service-modernisation";
-
-  var taggedItems = taxonHelpers.fetchTaggedItems(taxonSlug);
-  var guidanceItemsOnly = taxonHelpers.filterOutGuidance(taggedItems);
+  var pageTitle = "MOT test service modernisation";
   var childTaxons = taxonHelpers.fetchChildTaxons(taxonSlug);
+  var allContent = taxonHelpers.fetchTaggedItems(taxonSlug);
+  var guidanceContentOnly = taxonHelpers.filterOutGuidance(allContent);
 
-  if ( req.query.section === 'detailed' ) {
-    res.render('mot-test-service-modernisation_detailed', {childTaxons: childTaxons});
+  var presenter = {childTaxons: childTaxons, pageTitle: pageTitle};
+  var sectionTemplate = 'guidance';
+  if ( req.query.section != undefined ) { sectionTemplate = req.query.section; };
+
+  switch (req.query.section) {
+    case 'all-content':
+      presenter['contentListToRender'] = allContent;
+      break;
+    default:
+      presenter['contentListToRender'] = guidanceContentOnly;
   }
-  else if ( req.query.section === 'policy' ) {
-    res.render('mot-test-service-modernisation_policy', {childTaxons: childTaxons});
-  }
-  else if ( req.query.section === 'publications' ) {
-    res.render('mot-test-service-modernisation_publications', {taggedItems: taggedItems, childTaxons: childTaxons});
-  }
-  else {
-    res.render('mot-test-service-modernisation', {taggedItems: guidanceItemsOnly, childTaxons: childTaxons});
-  }
+
+  res.render('mot-test-service-modernisation/' + sectionTemplate, presenter);
 });
 
 // ****************** Driving Routes END ******************
