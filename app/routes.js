@@ -100,7 +100,49 @@ router.get('/driving-and-vehicle-businesses', function (req, res) {
   else {
     res.render('driving-and-vehicle-businesses', {taggedItems: guidanceItemsOnly, childTaxons: childTaxons});
   }
-  var taxonSlug = "driving-and-vehicle-businesses";
 });
+
+router.get('/running-an-mot-test-station', function (req, res) {
+  var taxonSlug = "running-an-mot-test-station";
+
+  var taggedItems = taxonHelpers.fetchTaggedItems(taxonSlug);
+  var guidanceItemsOnly = taxonHelpers.filterOutGuidance(taggedItems);
+  var childTaxons = taxonHelpers.fetchChildTaxons(taxonSlug);
+
+  if ( req.query.section === 'detailed' ) {
+    res.render('running-an-mot-test-station_detailed', {childTaxons: childTaxons});
+  }
+  else if ( req.query.section === 'policy' ) {
+    res.render('running-an-mot-test-station_policy', {childTaxons: childTaxons});
+  }
+  else if ( req.query.section === 'publications' ) {
+    res.render('running-an-mot-test-station_publications', {taggedItems: taggedItems, childTaxons: childTaxons});
+  }
+  else {
+    res.render('running-an-mot-test-station', {taggedItems: guidanceItemsOnly, childTaxons: childTaxons});
+  }
+});
+
+router.get('/mot-test-service-modernisation', function (req, res) {
+  var taxonSlug = "mot-test-service-modernisation";
+
+  var taggedItems = taxonHelpers.fetchTaggedItems(taxonSlug);
+  var guidanceItemsOnly = taxonHelpers.filterOutGuidance(taggedItems);
+  var childTaxons = taxonHelpers.fetchChildTaxons(taxonSlug);
+
+  if ( req.query.section === 'detailed' ) {
+    res.render('mot-test-service-modernisation_detailed', {childTaxons: childTaxons});
+  }
+  else if ( req.query.section === 'policy' ) {
+    res.render('mot-test-service-modernisation_policy', {childTaxons: childTaxons});
+  }
+  else if ( req.query.section === 'publications' ) {
+    res.render('mot-test-service-modernisation_publications', {taggedItems: taggedItems, childTaxons: childTaxons});
+  }
+  else {
+    res.render('mot-test-service-modernisation', {taggedItems: guidanceItemsOnly, childTaxons: childTaxons});
+  }
+});
+
 // ****************** Driving Routes END ******************
 module.exports = router;
