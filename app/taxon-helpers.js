@@ -37,6 +37,25 @@ var fetchChildTaxons = function (taxonSlug) {
   return childTaxons;
 }
 
+var fetchParentTaxon = function (taxonSlug) {
+  var taxonEndpoint = hostName + "api/content/alpha-taxonomy/" + taxonSlug
+  console.log("Fetching api data for " + taxonSlug);
+  parentTaxon = JSON.parse(
+    request('GET', taxonEndpoint).getBody()
+  ).links.parent
+
+  if (parentTaxon != undefined) {
+    parentPayload = parentTaxon[0];
+    return {
+      // Strip any leading digits indicating the taxon 'level'
+      title: parentPayload.title.replace(/^\d - /, ''),
+      //  Convert the content store slug into one that's suitable for linking to pages within the prototype
+      localHref: parentPayload.base_path.replace(/^\/alpha-taxonomy\//, '').replace(/^\d-/, '')
+    }
+  }
+  else { return null }
+};
+
 // Given an array of content items, return only those with path that begins with
 // '/guidance/'.
 var filterOutGuidance = function (contentItems) {
@@ -55,6 +74,7 @@ var filterOutGuidance = function (contentItems) {
 module.exports = {
   filterOutGuidance: filterOutGuidance,
   fetchChildTaxons: fetchChildTaxons,
-  fetchTaggedItems: fetchTaggedItems
+  fetchTaggedItems: fetchTaggedItems,
+  fetchParentTaxon: fetchParentTaxon
 }
 

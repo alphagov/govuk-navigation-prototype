@@ -7,6 +7,35 @@ router.get('/', function (req, res) {
   res.render('index');
 });
 
+function PagePresenter (taxonSlug, pageTitle, pageSection) {
+	this.taxonSlug = taxonSlug; // the slug of the taxon in the Content Store
+	this.pageTitle= pageTitle; // how you want the page title to appear
+	this.pageSection = pageSection; // the tabbed 'section' you're rendering
+
+  // Fetch appropriate taxonomy data
+  this.childTaxons         = taxonHelpers.fetchChildTaxons(this.taxonSlug);
+	this.parentTaxon         = taxonHelpers.fetchParentTaxon(this.taxonSlug);
+  this.allContent          = taxonHelpers.fetchTaggedItems(this.taxonSlug);
+  this.guidanceContentOnly = taxonHelpers.filterOutGuidance(this.allContent);
+
+  // Resolve the section we're rendering
+  this.sectionTemplate = 'guidance'; // default view
+  if ( this.pageSection != undefined ) { this.sectionTemplate = this.pageSection; };
+
+  this.determineContentList = function () {
+    switch (this.pageSection) {
+      case 'all-content':
+        return this.allContent; break;
+      case 'policy':
+        return this.allContent; break;
+      default:
+        return this.guidanceContentOnly;
+    }
+  }
+  // Determine what the content item list looks like for this page
+  this.contentListToRender = this.determineContentList();
+}
+
 // ****************** Education Routes BEGIN ******************
 router.get('/education', function (req, res) {
   var taxonSlug = "education";
@@ -72,77 +101,56 @@ router.get('/childminders', function (req, res) {
 
 // ****************** Driving Routes BEGIN ******************
 router.get('/driving-and-vehicles', function (req, res) {
-  var taxonSlug = "driving-and-vehicles";
+  var presenter = new PagePresenter(
+    "driving-and-vehicles",
+    "Driving and vehicles",
+    req.query.section
+  )
 
-  var taggedItems = taxonHelpers.fetchTaggedItems(taxonSlug);
-  var guidanceItemsOnly = taxonHelpers.filterOutGuidance(taggedItems);
-  var childTaxons = taxonHelpers.fetchChildTaxons(taxonSlug);
+  res.render(
+    'driving-and-vehicles/' + presenter.sectionTemplate,
+    presenter
+  );
 
-  res.render('driving-and-vehicles', {taggedItems: guidanceItemsOnly, childTaxons: childTaxons});
 });
 
 router.get('/driving-and-vehicle-businesses', function (req, res) {
-  var taxonSlug = "driving-and-vehicle-businesses";
+  var presenter = new PagePresenter(
+    "driving-and-vehicle-businesses",
+    "Driving and vehicle businesses",
+    req.query.section
+  )
 
-  var taggedItems = taxonHelpers.fetchTaggedItems(taxonSlug);
-  var guidanceItemsOnly = taxonHelpers.filterOutGuidance(taggedItems);
-  var childTaxons = taxonHelpers.fetchChildTaxons(taxonSlug);
-
-  if ( req.query.section === 'detailed' ) {
-    res.render('driving-and-vehicle-businesses_detailed', {childTaxons: childTaxons});
-  }
-  else if ( req.query.section === 'policy' ) {
-    res.render('driving-and-vehicle-businesses_policy', {childTaxons: childTaxons});
-  }
-  else if ( req.query.section === 'publications' ) {
-    res.render('driving-and-vehicle-businesses_publications', {taggedItems: taggedItems, childTaxons: childTaxons});
-  }
-  else {
-    res.render('driving-and-vehicle-businesses', {taggedItems: guidanceItemsOnly, childTaxons: childTaxons});
-  }
+  res.render(
+    'driving-and-vehicle-businesses/' + presenter.sectionTemplate,
+    presenter
+  );
 });
 
 router.get('/running-an-mot-test-station', function (req, res) {
-  var taxonSlug = "running-an-mot-test-station";
+  var presenter = new PagePresenter(
+    "running-an-mot-test-station",
+    "Running an MOT test station",
+    req.query.section
+  )
 
-  var taggedItems = taxonHelpers.fetchTaggedItems(taxonSlug);
-  var guidanceItemsOnly = taxonHelpers.filterOutGuidance(taggedItems);
-  var childTaxons = taxonHelpers.fetchChildTaxons(taxonSlug);
-
-  if ( req.query.section === 'detailed' ) {
-    res.render('running-an-mot-test-station_detailed', {childTaxons: childTaxons});
-  }
-  else if ( req.query.section === 'policy' ) {
-    res.render('running-an-mot-test-station_policy', {childTaxons: childTaxons});
-  }
-  else if ( req.query.section === 'publications' ) {
-    res.render('running-an-mot-test-station_publications', {taggedItems: taggedItems, childTaxons: childTaxons});
-  }
-  else {
-    res.render('running-an-mot-test-station', {taggedItems: guidanceItemsOnly, childTaxons: childTaxons});
-  }
+  res.render(
+    'running-an-mot-test-station/' + presenter.sectionTemplate,
+    presenter
+  );
 });
 
 router.get('/mot-test-service-modernisation', function (req, res) {
-  var taxonSlug = "mot-test-service-modernisation";
-  var pageTitle = "MOT test service modernisation";
-  var childTaxons = taxonHelpers.fetchChildTaxons(taxonSlug);
-  var allContent = taxonHelpers.fetchTaggedItems(taxonSlug);
-  var guidanceContentOnly = taxonHelpers.filterOutGuidance(allContent);
+  var presenter = new PagePresenter(
+    "mot-test-service-modernisation",
+    "MOT test service modernisation",
+    req.query.section
+  )
 
-  var presenter = {childTaxons: childTaxons, pageTitle: pageTitle};
-  var sectionTemplate = 'guidance';
-  if ( req.query.section != undefined ) { sectionTemplate = req.query.section; };
-
-  switch (req.query.section) {
-    case 'all-content':
-      presenter['contentListToRender'] = allContent;
-      break;
-    default:
-      presenter['contentListToRender'] = guidanceContentOnly;
-  }
-
-  res.render('mot-test-service-modernisation/' + sectionTemplate, presenter);
+  res.render(
+    'mot-test-service-modernisation/' + presenter.sectionTemplate,
+    presenter
+  );
 });
 
 // ****************** Driving Routes END ******************
