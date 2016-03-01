@@ -7,10 +7,11 @@ router.get('/', function (req, res) {
   res.render('index');
 });
 
-function PagePresenter (taxonSlug, pageTitle, pageSection) {
+function PagePresenter (taxonSlug, pageTitle, request) {
 	this.taxonSlug = taxonSlug; // the slug of the taxon in the Content Store
-	this.pageTitle= pageTitle; // how you want the page title to appear
-	this.pageSection = pageSection; // the tabbed 'section' you're rendering
+	this.pageTitle = pageTitle; // how you want the page title to appear
+	this.requestPath  = request.path; // the URL path only, no protocol or query string
+  this.pageSection  = request.query.section; // the tabbed 'section' you're rendering
 
   // Fetch appropriate taxonomy data
   this.childTaxons         = taxonHelpers.fetchChildTaxons(this.taxonSlug);
@@ -18,9 +19,10 @@ function PagePresenter (taxonSlug, pageTitle, pageSection) {
   this.allContent          = taxonHelpers.fetchTaggedItems(this.taxonSlug);
   this.guidanceContentOnly = taxonHelpers.filterOutGuidance(this.allContent);
 
-  // Resolve the section we're rendering
-  this.sectionTemplate = 'guidance'; // default view
-  if ( this.pageSection != undefined ) { this.sectionTemplate = this.pageSection; };
+  this.determineViewTemplatePath = function () {
+    if (this.pageSection == undefined) { this.pageSection = 'guidance' }; //default view
+    return this.requestPath.replace(/^\//, "") + "/" + this.pageSection;
+  };
 
   this.determineContentList = function () {
     switch (this.pageSection) {
@@ -31,127 +33,56 @@ function PagePresenter (taxonSlug, pageTitle, pageSection) {
       default:
         return this.guidanceContentOnly;
     }
-  }
+  };
+
   // Determine what the content item list looks like for this page
   this.contentListToRender = this.determineContentList();
+  // Determine the view template path, based on internal convention
+  this.viewTemplatePath = this.determineViewTemplatePath();
 }
 
 // ****************** Education Routes BEGIN ******************
 router.get('/education', function (req, res) {
-  var taxonSlug = "education";
-
-  var taggedItems = taxonHelpers.fetchTaggedItems(taxonSlug);
-  var guidanceItemsOnly = taxonHelpers.filterOutGuidance(taggedItems);
-  var childTaxons = taxonHelpers.fetchChildTaxons(taxonSlug);
-
-  res.render('education', {taggedItems: guidanceItemsOnly, childTaxons: childTaxons});
+  var presenter = new PagePresenter("education", "Education", req)
+  res.render(presenter.viewTemplatePath, presenter);
 });
 
 router.get('/childcare-and-early-years', function (req, res) {
-  var taxonSlug = "2-childcare-and-early-years";
-
-  var taggedItems = taxonHelpers.fetchTaggedItems(taxonSlug);
-  var guidanceItemsOnly = taxonHelpers.filterOutGuidance(taggedItems);
-  var childTaxons = taxonHelpers.fetchChildTaxons(taxonSlug);
-
-  if ( req.query.section === 'detailed' ) {
-    res.render('childcare-and-early-years_detailed', {childTaxons: childTaxons});
-  }
-  else if ( req.query.section === 'policy' ) {
-    res.render('childcare-and-early-years_policy', {childTaxons: childTaxons});
-  }
-  else if ( req.query.section === 'publications' ) {
-    res.render('childcare-and-early-years_publications', {taggedItems: taggedItems, childTaxons: childTaxons});
-  }
-  else {
-    res.render('childcare-and-early-years', {taggedItems: guidanceItemsOnly, childTaxons: childTaxons});
-  }
+  var presenter = new PagePresenter("2-childcare-and-early-years", "Childcare and early years", req)
+  res.render(presenter.viewTemplatePath, presenter);
 });
 
 router.get('/early-years-settings', function (req, res) {
-  var taxonSlug = "3-early-years-settings";
-
-  var taggedItems = taxonHelpers.fetchTaggedItems(taxonSlug);
-  var guidanceItemsOnly = taxonHelpers.filterOutGuidance(taggedItems);
-  var childTaxons = taxonHelpers.fetchChildTaxons(taxonSlug);
-
-  res.render('early-years-settings', {taggedItems: guidanceItemsOnly, childTaxons: childTaxons});
+  var presenter = new PagePresenter("3-early-years-settings", "Early years settings", req)
+  res.render(presenter.viewTemplatePath, presenter);
 });
 
 router.get('/childminders', function (req, res) {
-  var taxonSlug = "4-childminders";
-
-  var taggedItems = taxonHelpers.fetchTaggedItems(taxonSlug);
-  var guidanceItemsOnly = taxonHelpers.filterOutGuidance(taggedItems);
-
-  if ( req.query.section === 'detailed' ) {
-    res.render('childminders_detailed');
-  }
-  else if ( req.query.section === 'policy' ) {
-    res.render('childminders_policy');
-  }
-  else if ( req.query.section === 'publications' ) {
-    res.render('childminders_publications', {taggedItems: taggedItems});
-  }
-  else {
-    res.render('childminders', {taggedItems: guidanceItemsOnly});
-  }
+  var presenter = new PagePresenter("4-childminders", "Childminders", req)
+  res.render(presenter.viewTemplatePath, presenter);
 });
 // ****************** Education Routes END ******************
 
 // ****************** Driving Routes BEGIN ******************
 router.get('/driving-and-vehicles', function (req, res) {
-  var presenter = new PagePresenter(
-    "driving-and-vehicles",
-    "Driving and vehicles",
-    req.query.section
-  )
-
-  res.render(
-    'driving-and-vehicles/' + presenter.sectionTemplate,
-    presenter
-  );
-
+  var presenter = new PagePresenter("driving-and-vehicles", "Driving and vehicles", req)
+  res.render(presenter.viewTemplatePath, presenter);
 });
 
 router.get('/driving-and-vehicle-businesses', function (req, res) {
-  var presenter = new PagePresenter(
-    "driving-and-vehicle-businesses",
-    "Driving and vehicle businesses",
-    req.query.section
-  )
-
-  res.render(
-    'driving-and-vehicle-businesses/' + presenter.sectionTemplate,
-    presenter
-  );
+  var presenter = new PagePresenter("driving-and-vehicle-businesses", "Driving and vehicle businesses", req)
+  res.render(presenter.viewTemplatePath, presenter);
 });
 
 router.get('/running-an-mot-test-station', function (req, res) {
-  var presenter = new PagePresenter(
-    "running-an-mot-test-station",
-    "Running an MOT test station",
-    req.query.section
-  )
-
-  res.render(
-    'running-an-mot-test-station/' + presenter.sectionTemplate,
-    presenter
-  );
+  var presenter = new PagePresenter("running-an-mot-test-station", "Running an MOT test station", req)
+  res.render(presenter.viewTemplatePath, presenter);
 });
 
 router.get('/mot-test-service-modernisation', function (req, res) {
-  var presenter = new PagePresenter(
-    "mot-test-service-modernisation",
-    "MOT test service modernisation",
-    req.query.section
-  )
-
-  res.render(
-    'mot-test-service-modernisation/' + presenter.sectionTemplate,
-    presenter
-  );
+  var presenter = new PagePresenter("mot-test-service-modernisation", "MOT test service modernisation", req)
+  res.render(presenter.viewTemplatePath, presenter);
 });
-
 // ****************** Driving Routes END ******************
+
 module.exports = router;

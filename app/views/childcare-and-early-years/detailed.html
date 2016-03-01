@@ -1,0 +1,18 @@
+{{<base}}
+  {{$tabbedArea}}
+    <div class="views-block">
+      <ul>
+        <li class="deselected"><a href="childcare-and-early-years">Guidance</a></li>
+        <li class="selected"><a href="childcare-and-early-years?section=detailed">Detailed guidance</a></li>
+        <li class="deselected"><a href="childcare-and-early-years?section=policy">Policy</a></li>
+        <li class="deselected"><a href="childcare-and-early-years?section=all-content">All content</a></li>
+      </ul>
+    </div>
+
+    <div class="content-wrapper feature">
+      {{#contentListToRender}}
+        <p><a href="https://www.gov.uk{{base_path}}">{{title}}</a></p>
+      {{/contentListToRender}}
+    </div>
+  {{/tabbedArea}}
+{{/base}}
