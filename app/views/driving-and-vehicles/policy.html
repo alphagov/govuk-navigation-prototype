@@ -1,0 +1,28 @@
+{{<base}}
+  {{$tabbedArea}}
+    <div class="views-block">
+      <ul>
+        <li class="eselected"><a href="driving-and-vehicles">Guidance</a></li>
+        <li class="deselected"><a href="driving-and-vehicles?section=detailed">Detailed guidance</a></li>
+        <li class="selected"><a href="driving-and-vehicles?section=policy">Policy</a></li>
+        <li class="deselected"><a href="driving-and-vehicles?section=all-content">All content</a></li>
+      </ul>
+    </div>
+
+    {{>_search_and_filter}}
+
+    <div class="content-body">
+      <div class="pub-list">
+        <ul>
+          {{#contentListToRender}}
+            <li>
+              <a href="https://www.gov.uk{{base_path}}">{{title}}</a> </br>
+              <span class="meta">Statistics</span>
+            </li>
+          {{/contentListToRender}}
+        </ul>
+      </div>
+    </div>
+  {{/tabbedArea}}
+{{/base}}
+
