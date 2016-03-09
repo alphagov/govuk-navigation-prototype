@@ -9,7 +9,7 @@ var fetchTaggedItems = function (taxonSlug) {
 
 // Retrieve array containing title and modified slug of all child taxons.
 var fetchChildTaxons = function (taxonSlug) {
-  var childTaxons = taxonomyData[taxonSlug]["children"]
+  var childTaxons = taxonomyData[taxonSlug]["children"];
   childTaxons = childTaxons.map( function (taxon) {
     return {
       // Strip any leading digits indicating the taxon 'level'

@@ -50,7 +50,7 @@ class GeneratePrototypeData
     end
 
     writable_data = JSON.dump dataset
-    File.open("#{File.dirname(__FILE__)}/../app/data/prototype-data.json", 'wb') do |file|
+    File.open("#{File.dirname(__FILE__)}/../app/data/taxonomy-data.json", 'wb') do |file|
       file.write(writable_data)
     end
   end
