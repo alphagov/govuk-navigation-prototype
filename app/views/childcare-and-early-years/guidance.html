@@ -9,10 +9,18 @@
       </ul>
     </div>
 
-    <div class="content-wrapper feature">
-      {{#contentListToRender}}
-        <p><a href="https://www.gov.uk{{base_path}}">{{title}}</a></p>
-      {{/contentListToRender}}
+    <div class="content-wrapper">
+        {{#contentListToRender}}
+          {{#rows}}
+            <div class="grid-row">
+              {{#columns}}
+                <div class="column-third">
+                  <p><a href="https://www.gov.uk{{0.base_path}}">{{0.title}}</a></p>
+                </div>
+              {{/columns}}
+            </div>
+          {{/rows}}
+        {{/contentListToRender}}
     </div>
   {{/tabbedArea}}
 {{/base}}

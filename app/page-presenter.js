@@ -22,7 +22,12 @@ function PagePresenter (taxonSlug, pageTitle, request) {
     switch (this.pageSection) {
       case 'all-content':
         return this.allContent; break;
+      case 'guidance':
+        console.log('going crazy on guidance');
+        return filterHelpers.rowsWithThreeColumns(this.allContent, this.pageSection);
+        break;
       default:
+        console.log(filterHelpers.sectionFilter(this.allContent, this.pageSection));
         return filterHelpers.sectionFilter(this.allContent, this.pageSection);
     }
   };
