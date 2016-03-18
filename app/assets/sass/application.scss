@@ -591,6 +591,12 @@ font-weight: normal;
     overflow: visible;
 }
 
+.with-bottom-border {
+  margin-bottom: 30px;
+  padding: 10px;
+  border-bottom: 5px solid #005ea5;
+}
+
 .feature {
   font-size: 26px;
 }
