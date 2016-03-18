@@ -23,8 +23,11 @@ function PagePresenter (taxonSlug, pageTitle, request) {
       case 'all-content':
         return this.allContent; break;
       case 'guidance':
-        console.log('going crazy on guidance');
-        return filterHelpers.rowsWithThreeColumns(this.allContent, this.pageSection);
+        if (this.taxonSlug == '2-childcare-and-early-years') {
+          return filterHelpers.rowsWithThreeColumns(this.allContent, this.pageSection);
+        } else {
+          return filterHelpers.sectionFilter(this.allContent, this.pageSection);
+        }
         break;
       default:
         console.log(filterHelpers.sectionFilter(this.allContent, this.pageSection));
