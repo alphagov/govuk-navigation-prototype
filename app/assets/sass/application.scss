@@ -591,6 +591,19 @@ font-weight: normal;
     overflow: visible;
 }
 
+.recent-publications {
+  margin: -20px 0 10px;
+  border-bottom: 1px solid #dee0e2;
+
+  a {
+    text-decoration: none;
+  }
+
+  a.underline {
+    text-decoration: underline;
+  }
+}
+
 .with-bottom-border {
   margin-bottom: 30px;
   padding: 10px;
@@ -639,7 +652,9 @@ font-weight: normal;
   margin-bottom: -40px;
 }
 
-
+.subscribe {
+  float: right;
+}
 
 .footer-crumb-2 {
   margin-left: 50px;
