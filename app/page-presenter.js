@@ -1,7 +1,7 @@
 var taxonHelpers = require('./taxon-helpers.js');
 var filterHelpers = require('./filter-helpers.js');
 
-function PagePresenter (taxonSlug, pageTitle, request) {
+function PagePresenter(taxonSlug, pageTitle, request) {
   this.taxonSlug = taxonSlug; // the slug of the taxon in the Content Store
   this.pageTitle = pageTitle; // how you want the page title to appear
   this.requestPath = request.path; // the URL path only, no protocol or query string
