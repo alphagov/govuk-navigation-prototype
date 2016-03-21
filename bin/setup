@@ -1,0 +1,10 @@
+#!/bin/bash
+
+bundle install
+
+read -r -p "Would you like to update your taxonomy data file? [y/N] " response
+
+if [[ $response =~ ^([yY])$ ]]; then
+    echo "Generating taxonomy data..."
+    ./bin/generate_prototype_data.rb
+fi
