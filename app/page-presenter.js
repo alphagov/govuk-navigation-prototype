@@ -21,14 +21,9 @@ function PagePresenter(taxonSlug, pageTitle, request) {
   this.determineContentList = function () {
     switch (this.pageSection) {
       case 'all-content':
-        return this.allContent; break;
+        return this.allContent;
       case 'guidance':
-        if (this.taxonSlug == '2-childcare-and-early-years') {
-          return filterHelpers.rowsWithThreeColumns(this.allContent, this.pageSection);
-        } else {
-          return filterHelpers.sectionFilter(this.allContent, this.pageSection);
-        }
-        break;
+        return filterHelpers.rowsWithThreeColumns(this.allContent, this.pageSection);
       default:
         console.log(filterHelpers.sectionFilter(this.allContent, this.pageSection));
         return filterHelpers.sectionFilter(this.allContent, this.pageSection);
