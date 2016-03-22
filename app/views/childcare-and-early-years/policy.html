@@ -8,6 +8,20 @@
       </ul>
     </nav>
 
+    <div class="content-wrapper feature with-bottom-border">
+      {{#contentListToRender}}
+        {{#rows}}
+          <div class="grid-row">
+            {{#columns}}
+              <div class="column-third">
+                <p><a href="https://www.gov.uk{{base_path}}">{{title}}</a></p>
+              </div>
+            {{/columns}}
+          </div>
+        {{/rows}}
+      {{/contentListToRender}}
+    </div>
+
     {{>_search_and_filter}}
 
     <div class="content-body">

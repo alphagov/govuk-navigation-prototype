@@ -24,6 +24,8 @@ function PagePresenter(taxonSlug, pageTitle, request) {
         return this.allContent;
       case 'guidance':
         return filterHelpers.rowsWithThreeColumns(this.allContent, this.pageSection);
+      case 'policy':
+        return filterHelpers.rowsWithThreeColumns(this.allContent, this.pageSection);
       default:
         console.log(filterHelpers.sectionFilter(this.allContent, this.pageSection));
         return filterHelpers.sectionFilter(this.allContent, this.pageSection);

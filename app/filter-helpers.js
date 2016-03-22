@@ -24,9 +24,11 @@ var rowsWithThreeColumns = function(allContent, pageSection) {
   var rows    = { rows: [] };
   var columns = [];
 
-  for (var i = 0; i < filteredList.length; i++) {
-    var base_path = filteredList[i].base_path;
-    var title     = filteredList[i].title;
+  var firstSixElements = filteredList.slice(0, 5);
+
+  for (var i = 0; i < firstSixElements.length; i++) {
+    var base_path = firstSixElements[i].base_path;
+    var title     = firstSixElements[i].title;
 
     var column = {base_path: base_path, title: title};
 

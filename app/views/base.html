@@ -38,22 +38,37 @@
       </div>
     {{/childTaxons}}
 
-    <div class="whole-crumb">
-      <div class="footer-crumb">
-        <div class="crumb-label"><p class="font-medium"></p></div>
-        <div class="crumb-content"><p class="heading-large">{{pageTitle}}</p></div>
+    <div class="footer-crumb">
+
+      <div class="content-wrapper">
+        <div class="footer-title">
+          <h2 class="heading-medium">{{pageTitle}}</h2>
+        </div>
+
+        {{#parentTaxon}}
+          <div class="footer-body">
+            <p>Part of:</p>
+            <h2 class="heading-medium"><a href="#">{{title}}</a></h2>
+          </div>
+        {{/parentTaxon}}
       </div>
 
-      {{#parentTaxon}}
-      <div class="footer-crumb">
-        <div class="crumb-label"><p class="font-medium">Part of:</p></div>
-        <div class="crumb-content"><a href="{{localHref}}"><p class="heading-medium">{{title}}</p></a></div>
-      </div>
-      {{/parentTaxon}}
+      <div class="content-wrapper">
+        <div class="footer-title">
+          <h2 class="heading-medium">&nbsp;</h2>
+        </div>
 
-      <div class="footer-crumb">
-        <div class="crumb-label"><p class="font-medium">Main organisations:</p></div>
-        <div class="crumb-content"> <p class="heading-medium"><a href="#">Department of Education</a>, <a href="#">Ofsted</a>, <a href="#">Education Funding Agency</a></p></div>
+        <div class="footer-body">
+          <p>Main organisations:</p>
+
+          <h2 class="heading-medium">
+            <a href="#">Department of Education</a>
+            <br />
+            <a href="#">Ofsted</a></p>
+            <br />
+            <a href="#">Education Funding Agency</a>
+          </h2>
+        </div>
       </div>
     </div>
   </main>
