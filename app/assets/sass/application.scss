@@ -314,6 +314,43 @@
   text-decoration: none;
 }
 
+.activity-navigation {
+    height: 66px;
+    display: block;
+    margin: 0 -28px;
+    padding: 0 28px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #bfc1c3;
+}
+
+.activity-navigation li {
+    list-style: none;
+    float: left;
+    width: 33.33333333%;
+}
+
+.activity-navigation li a {
+    font-size: 24px;
+    line-height: 1.25;
+    text-decoration: none;
+    display: block;
+    padding: 20px 0 12px 20px;
+    margin: 0 2px;
+    background-color: #dee0e2;
+    color: #0b0c0c;
+}
+
+.activity-navigation li a.current {
+    position: relative;
+    margin-bottom: -1px;
+    font-weight: bold;
+    padding: 19px 0 16px 19px;
+    border: 1px solid #bfc1c3;
+    border-bottom: none;
+    background-color: #fff;
+}
+
+// will be deprecated by .activity-navigation
 .views-block {
   display: inline-block;
   width: 100%;
