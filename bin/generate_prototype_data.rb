@@ -3,6 +3,7 @@
 require 'pry'
 require 'net/http'
 require 'json'
+require 'date'
 
 class GeneratePrototypeData
   # TODO: add error handling (particularly network errors)
@@ -27,8 +28,14 @@ class GeneratePrototypeData
 
       puts "Getting format and display_type for each content item..."
       content_items.each do |content_item|
-        search_endpoint = URI "#{hostname}/api/search.json?filter_link=#{content_item["base_path"]}"
+
+        puts "-- Fetching updated_at & public_updated_at for #{content_item["base_path"]}"
+        content_item_endpoint = JSON.parse(Net::HTTP.get(URI(content_item["api_url"])))
+        content_item["updated_at"]        = content_item_endpoint["updated_at"]
+        content_item["public_updated_at"] = content_item_endpoint["public_updated_at"]
+
         puts "-- Fetching search data for #{content_item["base_path"]}"
+        search_endpoint = URI "#{hostname}/api/search.json?filter_link=#{content_item["base_path"]}"
         search_result = JSON.parse(Net::HTTP.get search_endpoint)
 
         if search_result["results"].first
