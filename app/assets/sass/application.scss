@@ -30,7 +30,7 @@
 // If you need to create a page as part of your journey, but without GOV.UK branding
 // See localhost:3000/examples/unbranded/
 .unbranded {
-  background: $white;
+  background-color: $white;
   // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
   * {
     font-family: Arial !important;
@@ -38,7 +38,7 @@
   // Remove GOV.UK footer styles
   #footer {
     border: 0;
-    background: $white;
+    background-color: $white;
   }
 }
 
@@ -48,9 +48,9 @@ a {
 
 .head-container {
     margin: 0 0 0 0;
-    background-color: #005ea5;
+    background-color: $govuk-blue;
     padding: 15px 15px 30px 15px;
-    color: #fff;
+    color: $white;
     min-height: 225px;
     width: 100%;
 }
@@ -97,8 +97,8 @@ a {
     overflow: hidden;
     text-indent: -5000px;
     cursor: pointer;
-    color: #fff;
-    background: #0b0c0c url(https://assets.digital.cabinet-office.gov.uk/manuals-frontend/search-button-4d67fecb1b50e27865977626e367ac67.png) no-repeat 0 50%;
+    color: $white;
+    background-color: #0b0c0c url(https://assets.digital.cabinet-office.gov.uk/manuals-frontend/search-button-4d67fecb1b50e27865977626e367ac67.png) no-repeat 0 50%;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -266,7 +266,7 @@ a {
   float: left;
   width: 50%;
   margin-left: 40px;
-  background: white;
+  background-color: $white;
   margin-top: -40px;
 }
 
@@ -274,7 +274,7 @@ a {
   float: left;
   width: 50%;
   margin-left: 0;
-  background: white;
+  background-color: $white;
   margin-top: 0;
 }
 
@@ -283,7 +283,7 @@ a {
   float: left;
   width: 66%;
   margin-left: 0;
-  background: white;
+  background-color: $white;
 }
 
 .sibling-content-4 {
@@ -291,7 +291,7 @@ a {
   float: left;
   width: 66%;
   margin-left: 0;
-  background: white;
+  background-color: $white;
 }
 
 .sibling-block-rhs {
@@ -377,7 +377,7 @@ a {
   margin-top: -55px;
   width: 26%;
   height: 650px;
-  background: white;
+  background-color: $white;
   padding: 10px;
   border-right: 2px solid $grey-3;
   border-left: 2px solid $grey-3;
@@ -421,8 +421,8 @@ a {
 }
 
 .sibling-block-2 a:hover {
-  background: #dee0e2;
-  color: #005ea5;
+  background-color: $grey-3;
+  color: $govuk-blue;
 }
 
 .sibling-block-2 ul a:after {
@@ -438,8 +438,8 @@ a {
 .sibling-block ul li.active a, ul li.active a {
   display: inline-block;
   padding: 12px 30px 8px 20px;
-    background: #005ea5;
-    color: #fff;
+    background-color: $govuk-blue;
+    color: $white;
     text-decoration: none;
 }
 
@@ -449,9 +449,9 @@ a {
   padding: 12px 30px 8px 15px;
   margin-left: -22px;
   margin-right: 7px;
-  border-left: 15px solid #005ea5;
-    background: #005ea5;
-    color: #fff;
+  border-left: 15px solid $govuk-blue;
+    background-color: $govuk-blue;
+    color: white;
     text-decoration: none;
 }
 
@@ -461,7 +461,7 @@ a {
     margin: 0 -28px;
     padding: 0 28px;
     box-sizing: border-box;
-    border-bottom: 1px solid #bfc1c3;
+    border-bottom: 1px solid $grey-2;
 }
 
 .activity-navigation li {
@@ -477,8 +477,8 @@ a {
     display: block;
     padding: 20px 0 12px 20px;
     margin: 0 2px;
-    background-color: #dee0e2;
-    color: #0b0c0c;
+    background-color: $grey-3;
+    color: $black;
 }
 
 .activity-navigation li a.current {
@@ -486,9 +486,9 @@ a {
     margin-bottom: -1px;
     font-weight: bold;
     padding: 19px 0 16px 19px;
-    border: 1px solid #bfc1c3;
+    border: 1px solid $grey-2;
     border-bottom: none;
-    background-color: #fff;
+    background-color: $white;
 }
 
 .popular-list {
@@ -540,7 +540,7 @@ font-weight: normal;
 
 
 .childcare-content {
-  background: $grey-3;
+  background-color: $grey-3;
 }
 
 
@@ -567,7 +567,7 @@ font-weight: normal;
     padding: 0 0 0 10px;
     display: block;
     height: 50px;
-    border-color: #bfc1c3;
+    border-color: $grey-2;
     border-right: none;
     line-height: 48px !important;
     display: inline-block;
@@ -580,8 +580,8 @@ font-weight: normal;
     border: none;
     overflow: hidden;
     text-indent: -5000px;
-    color: #fff;
-    background-color: #2b8cc4;
+    color: $white;
+    background-color: $light-blue;
     background-image: url(https://assets.digital.cabinet-office.gov.uk/frontend/search/search-button-0ae3883c51ecbc0e0c43a3bf60d67bce3a010c7a33334731dad0ba12e1f48295.png);
     background-repeat: no-repeat;
     background-position: -12.5% 50%;
@@ -599,7 +599,7 @@ font-weight: normal;
 
 .recent-publications {
   margin: -20px 0 10px;
-  border-bottom: 1px solid #dee0e2;
+  border-bottom: 1px solid $grey-3;
 
   a.underline {
     text-decoration: underline;
@@ -609,11 +609,11 @@ font-weight: normal;
 .with-bottom-border {
   margin-bottom: 30px;
   padding: 10px;
-  border-bottom: 5px solid #005ea5;
+  border-bottom: 5px solid $govuk-blue;
 }
 
 .selected {
-  background: $grey-3;
+  background-color: $grey-3;
   padding: 11px;
 }
 
