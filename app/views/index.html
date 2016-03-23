@@ -1,63 +1,63 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}Education{{/pageTitle}}
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
 
-{{$content}}
+{% block content %}
 
 <main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
 
-  <h1 class="heading-xlarge">Finding things</h1>
-  <h2 class="heading-large">Navigation prototype</h2>
+      <h1 class="heading-xlarge">The GOV.UK prototype kit</h1>
 
-<div class="index-list">
-<h2 class="heading-large">26 January 2016</h2>
-<ol class="list-number">
-  <li><span class="heading-medium">Level 1 - Education home&nbsp; <a href="education">Education</a></span></li>
-  <li><span class="heading-medium">Level 2 - Childcare and early years</span></li>
-    <ul class="list-bullet">
-        <li><a href="childcare-and-early-years">Guidance</a></li>
-        <li><a href="childcare-and-early-years?section=detailed">Detailed guidance</a></li>
-        <li><a href="childcare-and-early-years?section=policy">Policy</a></li>
-        <li><a href="childcare-and-early-years?section=publications">All publications</a></li>
-      </ul>
-  <li><span class="heading-medium">Level 3 - Early years settings</span></li>
-  <ul class="list-bullet">
-      <li><a href="early-years-settings">Guidance</a></li>
-      <li>Detailed guidance</li>
-      <li>Policy</li>
-      <li>All publications</li>
-    </ul>
-  <li><span class="heading-medium">Level 4 - Childminders topic</span></li>
-  <ul class="list-bullet">
-      <li><a href="childminders">Guidance</a></li>
-      <li><a href="childminders?section=detailed">Detailed guidance</li>
-      <li><a href="childminders?section=policy">Policy</li>
-      <li><a href="childminders?section=publications">All publications</a></li>
-    </ul>
-  <li><span class="heading-medium">Level 1 - Driving home&nbsp; <a href="driving-and-vehicles">Driving</a></span></li>
-</ol>
+      <p>
+        This kit lets you rapidly create HTML prototypes of GOV.UK services.
+      </p>
 
+      <p>
+        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
+      </p>
 
-  <h2 class="heading-large">Other pages</h2>
-  <ol class="list-number">
-  <li>
-  <a href="publications">Publications</a></li>
-  </ol>
+      <h2 class="heading-medium">About this page</h2>
 
-  <h2 class="heading-large">Archive</h2>
-  <p>Mainstream browse pattern</p>
-  <ol class="list-number">
-    <li>Home &nbsp; <a href="education">Education</a></li>
-    <li>Version 1: Mainstream Browse: Childcare and early years&nbsp; <a href="childcare-and-early-years">Childcare and early years</a></li>
-    <li>Version 2: RHS links: Childcare and early years&nbsp; <a href="childcare-and-early-years_v2">Childcare and early years</a></li>
+      <p>We recommend you add links to your prototype to this page, rather than delete it.
+        You'll find this page in the kit at '/app/views/index.html'.</p>
+      <p>You can change the service name by editing the file '/app/config.js'.</p>
 
-    <li>Early years settings&nbsp; <a href="early-years-settings">Early years settings</a></li>
-    <li>Childminders&nbsp; <a href="childminders">Find a childminder</a></li>
-  </ol>
+			<h2 class="heading-medium">Examples and documentation</h2>
 
-</div>
+			<ul class="list list-bullet">
+				<li><a href="/examples">Example pages and patterns</a></li>
+				<li><a href="https://github.com/alphagov/govuk_prototype_kit/tree/master/docs">
+						Read the full documentation</a></li>
+			</ul>
+
+      <h2 class="heading-medium">Other resources</h2>
+
+			<ul class="list list-bullet">
+				<li>
+					<a href="http://govuk-elements.herokuapp.com/snippets/">
+						Guide to GOV.UK Elements
+					</a>
+				</li>
+				<li>
+					<a href="https://www.gov.uk/service-manual">
+						Service design manual
+					</a>
+				</li>
+				<li>
+					<a href="https://www.gov.uk/design-principles">
+						Government Digital Service Design Principles
+					</a>
+				</li>
+			</ul>
+
+    </div>
+  </div>
 </main>
 
-{{/content}}
+{% endblock %}
 
-{{/layout}}
+
