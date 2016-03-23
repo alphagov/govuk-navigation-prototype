@@ -30,7 +30,7 @@
 // If you need to create a page as part of your journey, but without GOV.UK branding
 // See localhost:3000/examples/unbranded/
 .unbranded {
-  background: $white;
+  background-color: $white;
   // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
   * {
     font-family: Arial !important;
@@ -38,16 +38,19 @@
   // Remove GOV.UK footer styles
   #footer {
     border: 0;
-    background: $white;
+    background-color: $white;
   }
 }
 
+a {
+  text-decoration: none;
+}
 
 .head-container {
     margin: 0 0 0 0;
-    background-color: #005ea5;
+    background-color: $govuk-blue;
     padding: 15px 15px 30px 15px;
-    color: #fff;
+    color: $white;
     min-height: 225px;
     width: 100%;
 }
@@ -94,8 +97,8 @@
     overflow: hidden;
     text-indent: -5000px;
     cursor: pointer;
-    color: #fff;
-    background: #0b0c0c url(https://assets.digital.cabinet-office.gov.uk/manuals-frontend/search-button-4d67fecb1b50e27865977626e367ac67.png) no-repeat 0 50%;
+    color: $white;
+    background-color: #0b0c0c url(https://assets.digital.cabinet-office.gov.uk/manuals-frontend/search-button-4d67fecb1b50e27865977626e367ac67.png) no-repeat 0 50%;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -118,10 +121,6 @@
     margin-bottom: 15px;
     }
 
-  .topic-list a {
-    text-decoration: none;
-  }
-
   .services-list ul li {
     font-size: 24px!important;
     font-weight: bold;
@@ -133,7 +132,6 @@
   }
 
     .topic-list-b a {
-      text-decoration: none;
       color: white;
     }
 
@@ -146,6 +144,33 @@
 
 
 .content-wrapper {
+
+  &.feature {
+    font-size: 24px;
+  }
+
+  .footer-title {
+    vertical-align: top;
+    display: inline-block;
+    width: 32%;
+    clear: left;
+    margin-right: 20px;
+    margin-top: -13px;
+  }
+
+  .footer-body {
+    display: inline-block;
+    padding-top: 30px;
+    padding-bottom: 3px;
+    width: 60%;
+    line-height: 80%;
+    margin-top: -3px;
+
+    p {
+      font-size: 19px;
+      margin-bottom: -30px;
+    }
+  }
 }
 
 .content-title {
@@ -154,10 +179,6 @@
   width: 32%;
   clear: left;
   margin-right: 20px;
-}
-
-.content-title a {
-  text-decoration: none;
 }
 
 .content-body {
@@ -169,18 +190,13 @@
 }
 
 .content-body p {
-  font-size: 22px;
-}
-
-.content-body a {
-  text-decoration: none;
+  font-size: 19px;
 }
 
 .content-body li {
   font-size: 22px;
   line-height: 200%;
 }
-
 
 .js-enabled .govuk-option-select {
  padding: 0 5px 5px 5px;
@@ -239,7 +255,6 @@
 }
 .s-right a {
   font-size: 19px;
-  text-decoration: none;
 }
 
 .s-right li {
@@ -251,7 +266,7 @@
   float: left;
   width: 50%;
   margin-left: 40px;
-  background: white;
+  background-color: $white;
   margin-top: -40px;
 }
 
@@ -259,7 +274,7 @@
   float: left;
   width: 50%;
   margin-left: 0;
-  background: white;
+  background-color: $white;
   margin-top: 0;
 }
 
@@ -268,7 +283,7 @@
   float: left;
   width: 66%;
   margin-left: 0;
-  background: white;
+  background-color: $white;
 }
 
 .sibling-content-4 {
@@ -276,7 +291,7 @@
   float: left;
   width: 66%;
   margin-left: 0;
-  background: white;
+  background-color: $white;
 }
 
 .sibling-block-rhs {
@@ -296,8 +311,6 @@
 
 }
 
-
-
 .sibling-block-top-sec {
   float: left;
   width: 30%;
@@ -307,55 +320,19 @@
 
 .show-all {
   display: inline-block;
-  background: $grey-3;
-  padding: 10px 20px 10px 20px;
 }
 
 .show-all a {
-  font-weight: normal;
-  text-decoration: none;
+  font-weight: bold;
 }
-
-.views-block {
-  display: inline-block;
-  width: 100%;
-  margin: 10px 0px 50px 0;
-  padding-bottom: 0px;
-  border-bottom: 3px solid $grey-3;
-}
-
-.views-block li {
- margin-right: 45px;
- padding-bottom: 10px;
- font-size: 24px;
- text-decoration: none;
- display: inline-block;
-
-}
-
-.views-block a {
-  text-decoration: none;
-}
-
-
 
 .sib {
   padding: 5px;
 }
 
-.sibling-block-top-sec a {
-text-decoration: none;
-}
-
-.sibling-block-top-sec-2 a {
-text-decoration: none;
-}
-
 .sibling-block-top-sec-2 li {
   padding: 0px 30px 20px 0px;
 }
-
-
 
 .sibling-block-top-sec li {
   padding: 0px 30px 12px 0px;
@@ -367,7 +344,6 @@ text-decoration: none;
 }
 
 .sibling-block-rhs a {
-  text-decoration: none;
   display: inline-block;
   padding: 10px 30px 15px 15px;
   line-height: 1.14286;
@@ -401,7 +377,7 @@ text-decoration: none;
   margin-top: -55px;
   width: 26%;
   height: 650px;
-  background: white;
+  background-color: $white;
   padding: 10px;
   border-right: 2px solid $grey-3;
   border-left: 2px solid $grey-3;
@@ -445,8 +421,8 @@ text-decoration: none;
 }
 
 .sibling-block-2 a:hover {
-  background: #dee0e2;
-  color: #005ea5;
+  background-color: $grey-3;
+  color: $govuk-blue;
 }
 
 .sibling-block-2 ul a:after {
@@ -459,13 +435,11 @@ text-decoration: none;
     content: "\203A";
 }
 
-
-
 .sibling-block ul li.active a, ul li.active a {
   display: inline-block;
   padding: 12px 30px 8px 20px;
-    background: #005ea5;
-    color: #fff;
+    background-color: $govuk-blue;
+    color: $white;
     text-decoration: none;
 }
 
@@ -475,12 +449,47 @@ text-decoration: none;
   padding: 12px 30px 8px 15px;
   margin-left: -22px;
   margin-right: 7px;
-  border-left: 15px solid #005ea5;
-    background: #005ea5;
-    color: #fff;
+  border-left: 15px solid $govuk-blue;
+    background-color: $govuk-blue;
+    color: white;
     text-decoration: none;
 }
 
+.activity-navigation {
+    height: 66px;
+    display: block;
+    margin: 0 -28px;
+    padding: 0 28px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $grey-2;
+}
+
+.activity-navigation li {
+    list-style: none;
+    float: left;
+    width: 33.33333333%;
+}
+
+.activity-navigation li a {
+    font-size: 24px;
+    line-height: 1.25;
+    text-decoration: none;
+    display: block;
+    padding: 20px 0 12px 20px;
+    margin: 0 2px;
+    background-color: $grey-3;
+    color: $black;
+}
+
+.activity-navigation li a.current {
+    position: relative;
+    margin-bottom: -1px;
+    font-weight: bold;
+    padding: 19px 0 16px 19px;
+    border: 1px solid $grey-2;
+    border-bottom: none;
+    background-color: $white;
+}
 
 .popular-list {
 margin-left: 200px;
@@ -499,7 +508,6 @@ margin-left: 200px;
 .links-block a {
   font-size: 24px;
   font-weight: bold;
-  text-decoration: none;
 }
 
 .block-title {
@@ -520,9 +528,7 @@ margin-left: 200px;
   padding: 10px 0 10px 10px;
   font-weight: bold;
 }
-.pub-list a {
-  text-decoration: none;
-}
+
 .meta {
 font-weight: normal;
   font-size: 16px;
@@ -534,7 +540,7 @@ font-weight: normal;
 
 
 .childcare-content {
-  background: $grey-3;
+  background-color: $grey-3;
 }
 
 
@@ -561,7 +567,7 @@ font-weight: normal;
     padding: 0 0 0 10px;
     display: block;
     height: 50px;
-    border-color: #bfc1c3;
+    border-color: $grey-2;
     border-right: none;
     line-height: 48px !important;
     display: inline-block;
@@ -574,8 +580,8 @@ font-weight: normal;
     border: none;
     overflow: hidden;
     text-indent: -5000px;
-    color: #fff;
-    background-color: #2b8cc4;
+    color: $white;
+    background-color: $light-blue;
     background-image: url(https://assets.digital.cabinet-office.gov.uk/frontend/search/search-button-0ae3883c51ecbc0e0c43a3bf60d67bce3a010c7a33334731dad0ba12e1f48295.png);
     background-repeat: no-repeat;
     background-position: -12.5% 50%;
@@ -591,16 +597,23 @@ font-weight: normal;
     overflow: visible;
 }
 
-.feature {
-  font-size: 26px;
+.recent-publications {
+  margin: -20px 0 10px;
+  border-bottom: 1px solid $grey-3;
+
+  a.underline {
+    text-decoration: underline;
+  }
 }
 
-.feature a {
-  text-decoration: none;
+.with-bottom-border {
+  margin-bottom: 30px;
+  padding: 10px;
+  border-bottom: 5px solid $govuk-blue;
 }
 
 .selected {
-  background: $grey-3;
+  background-color: $grey-3;
   padding: 11px;
 }
 
@@ -608,32 +621,16 @@ font-weight: normal;
   padding: 11px;
 }
 
-.whole-crumb {
-  margin-top: 60px;
-  border-top: 2px solid $grey-3;
-}
-
 .footer-crumb {
-  padding: 10px 0 10px 30px;
+  border-top: 1px solid $grey-3;
+  padding: 30px 0;
   display: inline-block;
   width: 100%;
 }
 
-.crumb-label {
-  display: inline-block;
-  width: 30%;
-  float: left;
-  margin-top: 40px;
+.subscribe {
+  float: right;
 }
-
-.crumb-content {
-  width: 60%;
-  margin-left: 10px;
-  display: inline-block;
-  margin-bottom: -40px;
-}
-
-
 
 .footer-crumb-2 {
   margin-left: 50px;

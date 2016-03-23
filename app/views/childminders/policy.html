@@ -1,13 +1,12 @@
 {{<base}}
   {{$tabbedArea}}
-    <div class="views-block">
+    <nav class="activity-navigation">
       <ul>
-        <li class="eselected"><a href="childminders">Guidance</a></li>
-        <li class="deselected"><a href="childminders?section=detailed">Detailed guidance</a></li>
-        <li class="selected"><a href="childminders?section=policy">Policy</a></li>
-        <li class="deselected"><a href="childminders?section=all-content">All content</a></li>
+        <li><a href="childminders">Guidance</a></li>
+        <li><a class="current" href="childminders?section=policy">Policy</a></li>
+        <li><a href="childminders?section=all-content">All content</a></li>
       </ul>
-    </div>
+    </nav>
 
     {{>_search_and_filter}}
 

@@ -1,7 +1,7 @@
 var taxonHelpers = require('./taxon-helpers.js');
 var filterHelpers = require('./filter-helpers.js');
 
-function PagePresenter (taxonSlug, pageTitle, request) {
+function PagePresenter(taxonSlug, pageTitle, request) {
   this.taxonSlug = taxonSlug; // the slug of the taxon in the Content Store
   this.pageTitle = pageTitle; // how you want the page title to appear
   this.requestPath = request.path; // the URL path only, no protocol or query string
@@ -21,8 +21,13 @@ function PagePresenter (taxonSlug, pageTitle, request) {
   this.determineContentList = function () {
     switch (this.pageSection) {
       case 'all-content':
-        return this.allContent; break;
+        return this.allContent;
+      case 'guidance':
+        return filterHelpers.rowsWithThreeColumns(this.allContent, this.pageSection);
+      case 'policy':
+        return filterHelpers.rowsWithThreeColumns(this.allContent, this.pageSection);
       default:
+        console.log(filterHelpers.sectionFilter(this.allContent, this.pageSection));
         return filterHelpers.sectionFilter(this.allContent, this.pageSection);
     }
   };

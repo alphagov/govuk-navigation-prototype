@@ -17,53 +17,58 @@
 
     <div class="sibling-container">
       <h2 class="heading-xlarge">{{pageTitle}}</h2>
-      <div class="preamble">
-        <p><span class="font-medium">Find services for {{pageTitle}}, and read guidance, policies and other publications</span>
-      </div>
-
-      <div class="search-header">
-        <div class="searchfield">
-          <input type="search" name="q" value="" id="search-main">
-          <button type="submit" class="button">Search</button>
-        </div>
-      </div>
     </div>
 
     {{$tabbedArea}}{{/tabbedArea}}
 
+    {{$recent_publications}}{{/recent_publications}}
+
     {{#childTaxons}}
       <div class="content-wrapper">
         <div class="content-title">
-          <h2 class="heading-medium">
-            <a href="{{localHref}}">{{title}}</a>
-          </h2>
+          <h2 class="heading-medium">{{title}}</h2>
         </div>
 
         <div class="content-body">
           <p><a href="#">Subtopic</a></p>
           <p><a href="#">Subtopic</a></p>
           <p><a href="#">Subtopic</a></p>
-          <p class="show-all"><a href="{{localHref}}">View more</a></p>
+          <p class="show-all"><a href="{{localHref}}">See all related topics</a></p>
         </div>
       </div>
     {{/childTaxons}}
 
-    <div class="whole-crumb">
-      <div class="footer-crumb">
-        <div class="crumb-label"><p class="font-medium"></p></div>
-        <div class="crumb-content"><p class="heading-large">{{pageTitle}}</p></div>
+    <div class="footer-crumb">
+
+      <div class="content-wrapper">
+        <div class="footer-title">
+          <h2 class="heading-medium">{{pageTitle}}</h2>
+        </div>
+
+        {{#parentTaxon}}
+          <div class="footer-body">
+            <p>Part of:</p>
+            <h2 class="heading-medium"><a href="#">{{title}}</a></h2>
+          </div>
+        {{/parentTaxon}}
       </div>
 
-      {{#parentTaxon}}
-      <div class="footer-crumb">
-        <div class="crumb-label"><p class="font-medium">Part of:</p></div>
-        <div class="crumb-content"><a href="{{localHref}}"><p class="heading-medium">{{title}}</p></a></div>
-      </div>
-      {{/parentTaxon}}
+      <div class="content-wrapper">
+        <div class="footer-title">
+          <h2 class="heading-medium">&nbsp;</h2>
+        </div>
 
-      <div class="footer-crumb">
-        <div class="crumb-label"><p class="font-medium">Main organisations:</p></div>
-        <div class="crumb-content"> <p class="heading-medium"><a href="#">Department of Education</a>, <a href="#">Ofsted</a>, <a href="#">Education Funding Agency</a></p></div>
+        <div class="footer-body">
+          <p>Main organisations:</p>
+
+          <h2 class="heading-medium">
+            <a href="#">Department of Education</a>
+            <br />
+            <a href="#">Ofsted</a></p>
+            <br />
+            <a href="#">Education Funding Agency</a>
+          </h2>
+        </div>
       </div>
     </div>
   </main>

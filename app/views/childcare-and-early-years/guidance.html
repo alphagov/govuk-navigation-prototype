@@ -1,18 +1,29 @@
 {{<base}}
   {{$tabbedArea}}
-    <div class="views-block">
+    <nav class="activity-navigation">
       <ul>
-        <li class="selected"><a href="childcare-and-early-years">Guidance</a></li>
-        <li class="deselected"><a href="childcare-and-early-years?section=detailed">Detailed guidance</a></li>
-        <li class="deselected"><a href="childcare-and-early-years?section=policy">Policy</a></li>
-        <li class="deselected"><a href="childcare-and-early-years?section=all-content">All content</a></li>
+        <li><a class="current" href="childcare-and-early-years">Guidance</a></li>
+        <li><a href="childcare-and-early-years?section=policy">Policy</a></li>
+        <li><a href="childcare-and-early-years?section=all-content">Everything</a></li>
       </ul>
-    </div>
+    </nav>
 
-    <div class="content-wrapper feature">
+    <div class="content-wrapper feature with-bottom-border">
       {{#contentListToRender}}
-        <p><a href="https://www.gov.uk{{base_path}}">{{title}}</a></p>
+        {{#rows}}
+          <div class="grid-row">
+            {{#columns}}
+              <div class="column-third">
+                <p><a href="https://www.gov.uk{{base_path}}">{{title}}</a></p>
+              </div>
+            {{/columns}}
+          </div>
+        {{/rows}}
       {{/contentListToRender}}
     </div>
   {{/tabbedArea}}
+
+  {{$recent_publications}}
+    {{> _recent_publications }}
+  {{/recent_publications}}
 {{/base}}
