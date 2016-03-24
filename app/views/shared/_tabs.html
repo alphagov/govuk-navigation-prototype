@@ -1,19 +1,25 @@
 {% set active_tab = selectedTab %}
 
-<div class="sibling-container">
-  <nav class="activity-navigation">
-    <ul>
-      <li>
-        <a {% if active_tab == 'guidance' %} class="current" {% endif %} href="{{taxonSlug}}?guidance">Guidance and services</a>
-      </li>
+<div class="grid-row">
+  <div class="column-full">
 
-      <li>
-        <a {% if active_tab == 'policy' %} class="current" {% endif %} href="{{taxonSlug}}?policy">Policy</a>
-      </li>
+    <div class="sibling-container">
+      <nav class="activity-navigation">
+        <ul>
+          <li>
+            <a {% if active_tab == 'guidance' %} class="current" {% endif %} href="{{taxonSlug}}?tab=guidance">Guidance and services</a>
+          </li>
 
-      <li>
-        <a {% if active_tab == 'all' %} class="current" {% endif %} href="{{taxonSlug}}?all">Everything</a>
-      </li>
-    </ul>
-  </nav>
+          <li>
+            <a {% if active_tab == 'policy' %} class="current" {% endif %} href="{{taxonSlug}}?tab=policy">Policy</a>
+          </li>
+
+          <li>
+            <a {% if active_tab == 'all' %} class="current" {% endif %} href="{{taxonSlug}}?tab=all">Everything</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
 </div>

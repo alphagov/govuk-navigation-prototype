@@ -1,0 +1,16 @@
+<div class="grid-row">
+  <div class="column-full">
+    <div class="breadcrumbs">
+      <ol>
+        <li><a href="/">Home</a></li>
+        {% if parentTaxon %}
+          <li><a href="{{ parentTaxon.localHref }}">{{ parentTaxon.title }}</a></li>
+        {% endif %}
+        <li>{{pageTitle}}</li>
+      </ol>
+    </div>
+    <br>
+    <h1 class="heading-xlarge">{{pageTitle}}</h1>
+  </div>
+</div>
+

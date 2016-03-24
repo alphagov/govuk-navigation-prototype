@@ -18,7 +18,7 @@ var fetchChildTaxons = function (taxonSlug) {
       // Strip any leading digits indicating the taxon 'level'
       title: taxon.title.replace(/^\d - /, ''),
       //  Convert the content store slug into one that's suitable for linking to pages within the prototype
-      localHref: taxon.base_path.replace(/^\/alpha-taxonomy\//, '').replace(/^\d-/, '')
+      localHref: taxon.base_path.replace(/^\/alpha-taxonomy\//, ''),
     }
   });
 

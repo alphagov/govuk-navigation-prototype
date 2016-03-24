@@ -1,0 +1,32 @@
+<div class="grid-row">
+  <div class="column-full">
+    <div class="footer-crumb">
+      <div class="content-wrapper">
+        <div class="footer-title">
+          <h2 class="heading-medium">{{pageTitle}}</h2>
+        </div>
+
+        {% if parentTaxon %}
+          <div class="footer-body">
+            <p>Part of:</p>
+            <h2 class="heading-medium"><a href="#">{{parentTaxon.title}}</a></h2>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="content-wrapper">
+        <div class="footer-title">
+          <h2 class="heading-medium">&nbsp;</h2>
+        </div>
+
+        <div class="footer-body">
+          <p>Main organisations:</p>
+          <h2 class="heading-medium">
+            <a href="#">Ofsted</a></br>
+            <a href="#">Department for Education</a></br>
+            <a href="#">Education Funding Agency</a></p>  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="recent-pubs">
+  <span class="subscribe"><p>Subscribe by <a class="underline" href="#">email</a> or <a href="#">RSS</a></p></span>
+  <h2 class="heading-medium">Latest</h2>
+
+  <div class="grid-row">
+    {% for contentItem in latestContent %}
+      <div class="column-third">
+          <span class="font-xsmall">9 March 2016 &nbsp; Ofsted</span></br>
+          <p><a href="#">{{ contentItem.title }}</a></br>
+      </div>
+    {% endfor %}
+  </div>
+  <p><a href="#">See all</a></p>
+</div>
