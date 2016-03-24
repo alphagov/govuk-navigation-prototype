@@ -1,0 +1,19 @@
+{% set active_tab = selectedTab %}
+
+<div class="sibling-container">
+  <nav class="activity-navigation">
+    <ul>
+      <li>
+        <a {% if active_tab == 'guidance' %} class="current" {% endif %} href="{{taxonSlug}}?guidance">Guidance and services</a>
+      </li>
+
+      <li>
+        <a {% if active_tab == 'policy' %} class="current" {% endif %} href="{{taxonSlug}}?policy">Policy</a>
+      </li>
+
+      <li>
+        <a {% if active_tab == 'all' %} class="current" {% endif %} href="{{taxonSlug}}?all">Everything</a>
+      </li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+
+      <div class="breadcrumbs">
+        <ol>
+          <li><a href="/">Home</a></li>
+          {% if parentTaxon %}
+            <li><a href="{{ parentTaxon.localHref }}">{{ parentTaxon.title }}</a></li>
+          {% endif %}
+          <li>{{pageTitle}}</li>
+        </ol>
+      </div>
+
+      <h1 class="heading-xlarge">{{pageTitle}}</h1>
+
+      {% include "shared/_tabs.html" %}
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
