@@ -14,7 +14,8 @@
     "travel advice|none",
     "video|none"
   ],
-  "detailed": [
+  "_comment": "Renamed 'detailed' key below to 'guidance' so its all treated as guidance.",
+  "guidance": [
     "aaib report|none",
     "cma case|none",
     "countryside stewardship grant|none",

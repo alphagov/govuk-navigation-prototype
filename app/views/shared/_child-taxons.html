@@ -1,0 +1,20 @@
+{% if childTaxons %}
+  <div class="navigation-box">
+    {% for taxon in childTaxons %}
+      <div class="content-wrapper">
+        <div class="content-title">
+          <h2 class="heading-medium">
+            <a href="{{taxon.localHref}}">{{taxon.title}}</a>
+          </h2>
+        </div>
+
+        <div class="content-body">
+          <p><a href="#">Subtopic</a></p>
+          <p><a href="#">Subtopic</a></p>
+          <p><a href="#">Subtopic</a></p>
+          <p class="show-all"><a href="{{localHref}}">View more</a></p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

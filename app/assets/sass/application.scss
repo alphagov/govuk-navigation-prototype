@@ -1,31 +1,9 @@
-@import 'colours';
-
-@import '_option-select';
-
-
 // Import GOV.UK elements, this will import the frontend toolkit and some base styles.
-// Take a look at elements.scss to see which files are imported.
-@import 'elements';
+// Take a look in _govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
 
 // Take a look at patterns.scss to see which files are imported.
 @import 'patterns';
-
-
-// Set up your main content area <main id="content">
-// This will give you a full width content block
-// See elements _layout.scss line 7.
-
-// If you need it, set up your grid layout - refer to the grid layout usage example
-// See elements _layout.scss line 28.
-
-// If you need a phase banner, put this inside the main content area
-// See elements _layout.scss line 22.
-.phase-banner-alpha  {
-  @include phase-banner(alpha); // Change this to (beta) for a beta banner
-}
-.phase-tag-alpha {
-  @include phase-tag(alpha); // Change this to (beta) for a beta tag
-}
 
 // If you need to create a page as part of your journey, but without GOV.UK branding
 // See localhost:3000/examples/unbranded/
@@ -42,22 +20,9 @@
   }
 }
 
-
-.head-container {
-    margin: 0 0 0 0;
-    background-color: #005ea5;
-    padding: 15px 15px 30px 15px;
-    color: #fff;
-    min-height: 225px;
-    width: 100%;
-}
-
-// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you,
-// either add and import new partial files, or modify those in GOV.UK elements to fit your user needs.
-
-// Related links
+// Related items
 // (These styles will be moved to GOV.UK elements, duplicating here for now.)
-.related-links {
+.govuk-related-items {
   margin-top: $gutter;
   border-top: 10px solid $govuk-blue;
   padding-top: 5px;
@@ -69,9 +34,25 @@
 
   li {
     margin-bottom: 10px;
+    list-style-type: none;
   }
 }
 
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+// ****************************************************************************
+
+.column-full {
+  @include grid-column(4/4);
+}
+.head-container {
+    margin: 0 0 0 0;
+    background-color: #005ea5;
+    padding: 15px 15px 30px 15px;
+    color: #fff;
+    min-height: 225px;
+    width: 100%;
+}
 
 .search {
   display: inline-block;
@@ -83,7 +64,6 @@
     background-size: 52.5px 40px;
     background-position: 115% 50%;
 }
-
 
 .search button {
     width: 38px;
@@ -154,6 +134,7 @@
   width: 32%;
   clear: left;
   margin-right: 20px;
+  margin-top: -13px;
 }
 
 .content-title a {
@@ -163,13 +144,48 @@
 .content-body {
   vertical-align: top;
   display: inline-block;
-  padding-top: 40px;
-  padding-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 3px;
   width: 60%;
+  line-height: 80%;
+  margin-top: -3px;
 }
 
+.footer-body {
+  vertical-align: top;
+  display: inline-block;
+  padding-top: 30px;
+  padding-bottom: 3px;
+  width: 60%;
+  line-height: 80%;
+  margin-top: -3px;
+}
+
+.footer-title {
+  vertical-align: top;
+  display: inline-block;
+  width: 32%;
+  clear: left;
+  margin-right: 20px;
+  margin-top: -13px;
+}
+
+.footer-title p {
+  font-size: 19px;
+  margin-bottom: -30px;
+}
+
+.footer-title a {
+  text-decoration: none;
+}
+.footer-body p {
+  font-size: 19px;
+  margin-bottom: -30px;
+}
+
+
 .content-body p {
-  font-size: 22px;
+  font-size: 19px;
 }
 
 .content-body a {
@@ -216,7 +232,8 @@
 //Show siblings on 3rd level//
 
 .sibling-container {
-	overflow: visible;
+  display: block;
+  clear: both;
 }
 
 
@@ -307,12 +324,11 @@
 
 .show-all {
   display: inline-block;
-  background: $grey-3;
-  padding: 10px 20px 10px 20px;
+  padding: 0px 0px 0px 0px;
 }
 
 .show-all a {
-  font-weight: normal;
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -512,20 +528,21 @@ margin-left: 200px;
 }
 
 .pub-list {
-  margin-top: -26px;
+  margin: 10px 0 10px 0;
 }
 
 .pub-list li {
   border-bottom: 1px solid $grey-3;
-  padding: 10px 0 10px 10px;
+  padding: 10px 0 10px 0px;
   font-weight: bold;
+  font-size: 19px;
 }
 .pub-list a {
   text-decoration: none;
 }
 .meta {
 font-weight: normal;
-  font-size: 16px;
+  font-size: 19px;
 }
 .pub-subscribe {
   padding-bottom: 20px;
@@ -592,7 +609,7 @@ font-weight: normal;
 }
 
 .feature {
-  font-size: 26px;
+
 }
 
 .feature a {
@@ -614,30 +631,419 @@ font-weight: normal;
 }
 
 .footer-crumb {
-  padding: 10px 0 10px 30px;
+  border-top: 1px solid $grey-3;
+  padding: 30px 0 30px 0px;
   display: inline-block;
   width: 100%;
 }
+
 
 .crumb-label {
   display: inline-block;
   width: 30%;
   float: left;
-  margin-top: 40px;
+}
+
+.date {
+  font-weight: bold;
 }
 
 .crumb-content {
   width: 60%;
   margin-left: 10px;
   display: inline-block;
-  margin-bottom: -40px;
 }
 
 
 
-.footer-crumb-2 {
-  margin-left: 50px;
+.recent-docs {
+  padding: 10px 0 10px 30px;
+  display: inline-block;
+  width: 100%;
 }
+
+
+
 .content-title h2 {
-  border-bottom: 0px solid $grey-2;
+  margin-top: 40px;
+}
+
+
+.top-box {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-bottom: 5px solid $govuk-blue;
+}
+
+.top-box a {
+  font-size: 24px;
+}
+
+.navigation-box {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-top: 5px solid $govuk-blue;
+}
+
+// CSS from gds-pub-prototype //
+
+#content {
+  max-width: 960px;
+  margin: 0 15px;
+  display: block;
+  padding-bottom: 30px; }
+  @media (min-width: 641px) {
+    #content {
+      margin: 0 30px; } }
+  @media (min-width: 1020px) {
+    #content {
+      margin: 0 auto; } }
+  #content:after {
+    content: "";
+    display: block;
+    clear: both; }
+  @media (min-width: 769px) {
+    #content {
+      padding-bottom: 90px; } }
+
+#content h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.0416666667;
+  font-weight: 700;
+  text-transform: none;
+  margin-top: 15px;
+  margin-bottom: 30px; }
+  @media (max-width: 640px) {
+    #content h1 {
+      font-size: 32px;
+      line-height: 1.09375; } }
+  @media (min-width: 641px) {
+    #content h1 {
+      margin-top: 30px;
+      margin-bottom: 60px; } }
+
+
+      .more {
+  font-size: 19px !important;
+  font-weight: bold; }
+
+.updates {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media (min-width: 641px) {
+    .updates {
+      float: left;
+      width: 16.6666666667%; } }
+
+.changelog {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media (min-width: 641px) {
+    .changelog {
+      float: left;
+      width: 83.3333333333%; } }
+  .changelog .datetime {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    @media (min-width: 641px) {
+      .changelog .datetime {
+        float: left;
+        width: 20%; } }
+  .changelog .changes {
+    padding: 0 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 19px;
+    margin-top: -9px; }
+    @media (min-width: 641px) {
+      .changelog .changes {
+        float: left;
+        width: 80%; } }
+  .changelog .morebutton {
+    clear: both;
+    float: left;
+    width: 90%;
+    padding-top: 10px;
+    }
+
+.changelog-two {
+  overflow: auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  clear: both; }
+
+.changelog-two h2 {
+  font-size: 27px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-top: 20px; }
+
+.changes a {
+  text-decoration: none; }
+
+.datetime {
+  margin-top: -11px;
+  font-size: 19px !important;
+  font-weight: bold; }
+
+.docuprice {
+  font-size: 14px;
+  display: block; }
+  @media (min-width: 641px) {
+    .docuprice {
+      display: inline;
+      margin-left: 10px; } }
+
+/* Index Two */
+.container {
+  width: 100%;
+  overflow: hidden;
+  clear: both; }
+
+@media (min-width: 641px) {
+  .pub-title {
+    float: left;
+    width: 65.666%;
+    margin-bottom: 40px; } }
+.pub-title p {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-transform: none;
+  margin-top: -1px;
+  margin-bottom: 3px;
+  margin-right: 60px; }
+  @media (max-width: 640px) {
+    .pub-title p {
+      font-size: 18px;
+      line-height: 1.2; } }
+  @media (min-width: 641px) {
+    .pub-title p {
+      font-weight: bold; } }
+
+a {
+  text-decoration: none; }
+
+.pub-date {
+  display: block;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.3157894737;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: normal; }
+  @media (max-width: 640px) {
+    .pub-date {
+      font-size: 19px;
+      line-height: 1.25; } }
+  @media (min-width: 641px) {
+    .pub-date {
+      font-family: "nta", Arial, sans-serif;
+      font-size: 19px;
+      line-height: 1.25;
+      font-weight: 400;
+      text-transform: none; }
+      @media (max-width: 640px) {
+        .pub-date {
+          font-size: 14px;
+          line-height: 1.1428571429; } } }
+
+.pub-metadata {
+  line-height: 1.25;
+  margin-bottom: 40px; }
+  @media (min-width: 641px) {
+    .pub-metadata {
+      width: 33.333%;
+      float: left; }
+      .pub-metadata:last-child {
+        margin-bottom: 40px; } }
+  .pub-metadata .docutype {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.3157894737;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: normal;
+    margin-right: 5px; }
+    @media (max-width: 640px) {
+      .pub-metadata .docutype {
+        font-size: 19px;
+        line-height: 1.25; } }
+    @media (min-width: 641px) {
+      .pub-metadata .docutype {
+        display: block;
+        font-family: "nta", Arial, sans-serif;
+        font-size: 24px;
+        line-height: 1.25;
+        font-weight: 400;
+        text-transform: none;
+        font-weight: bold; }
+        @media (max-width: 640px) {
+          .pub-metadata .docutype {
+            font-size: 18px;
+            line-height: 1.2; } } }
+    .pub-metadata .docutype:last-child {
+      margin-bottom: 0px; }
+
+.view-all {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 60px; }
+
+.request {
+  font-size: 14px;
+  display: block; }
+
+.docuref {
+  font-size: 14px;
+  color: #6f777b; }
+
+  .time {
+  font-weight: normal;
+  font-size: 19px; }
+
+.metadata {
+  overflow: hidden;
+  width: 100%;
+  clear: both; }
+
+.part-of {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media (min-width: 641px) {
+    .part-of {
+      float: left;
+      width: 66.6666666667%; } }
+
+.department {
+  margin-top: 43px;
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media (min-width: 641px) {
+    .department {
+      float: left;
+      width: 33.3333333333%; } }
+
+.metadata h2 {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 20px; }
+
+.metadata p {
+  font-size: 16px;
+  margin-bottom: -15px; }
+
+
+
+.updates h2 {
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: -10px;
+  margin-bottom: 40px;
+}
+
+.partof {
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.activity-navigation {
+    @extend .cf;
+    border-bottom: 1px solid #bfc1c3;
+    display: block;
+    margin: 0 -28px;
+    padding: 0 28px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.activity-navigation li {
+    list-style: none;
+    float: left;
+    width: 33.33333333%;
+    padding: 0;
+}
+
+.activity-navigation li a {
+    display: block;
+    font-family: "nta", Arial, sans-serif;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: none;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    padding: 20px 0 12px 20px;
+    margin: 0 2px;
+    background: #dee0e2;
+    color: #0b0c0c;
+}
+
+
+    .activity-navigation li a.current {
+    position: relative;
+    margin-bottom: -1px;
+    font-family: "nta", Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: bold;
+    text-transform: none;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    padding: 19px 0 16px 19px;
+    border: 1px solid #bfc1c3;
+    border-bottom: none;
+    background: #fff;
+    text-decoration: none;
+}
+
+.activity-navigation li a.current {
+    font-size: 24px !important;
+    line-height: 1.25;
+}
+
+.activity-navigation li a {
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.recent-pubs {
+  margin: -20px 0 10px 0;
+}
+
+.subscribe {
+  float: right;
+}
+.underline a {
+  text-decoration: underline !important;
+}
+
+.pub-box {
+clear: both;
+background: none;
 }
