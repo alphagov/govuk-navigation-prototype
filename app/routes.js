@@ -1,43 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
+var TaxonPresenter = require('./presenters/taxon-presenter.js');
+
 router.get('/', function (req, res) {
-  
   res.render('index');
-
 });
 
-
-// Example routes - feel free to delete these
-
-// Passing data into a page
-
-router.get('/examples/template-data', function (req, res) {
-
-  res.render('examples/template-data', { 'name' : 'Foo' });
-
-});
-
-// Branching
-
-router.get('/examples/over-18', function (req, res) {
-
-  // get the answer from the query string (eg. ?over18=false)
-  var over18 = req.query.over18;
-
-  if (over18 == "false"){
-
-    // redirect to the relevant page
-    res.redirect("/examples/under-18");
-
-  } else {
-
-    // if over18 is any other value (or is missing) render the page requested
-    res.render('examples/over-18');
-
-  }
-
-});
+router.get('/taxons/:taxonSlug', function (req, res) {
+  var presenter = new TaxonPresenter(req.params.taxonSlug, req);
+  res.render(presenter.selectedTab, presenter);
+})
 
 // add your routes here
 
