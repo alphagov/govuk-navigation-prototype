@@ -1,0 +1,30 @@
+<div class="pub-box">
+  <div class="grid-row">
+    <div class="column-third">
+
+      <div class="govuk-option-select">
+        <div class="container-head">
+          <label class="option-select-label" for="keywords">
+            Search
+          </label>
+        </div>
+        <input class="filter-field-text" type="text" name="q" id="keywords" value="" maxlength="200">
+      </div>
+    </div>
+
+    <div class="column-two-thirds">
+      <div class="pub-list">
+        <ul>
+          {% for contentItem in contentListToRender %}
+            <li>
+              <a href="#">{{contentItem.title}}</a></br>
+              <span class="font-xsmall">
+                25 March 2016 &nbsp; Some descriptive text.
+              </span>
+            </li>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+

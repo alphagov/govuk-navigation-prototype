@@ -22,7 +22,10 @@ var fetchChildTaxons = function (taxonSlug) {
     }
   });
 
-  return childTaxons;
+  if (childTaxons.length > 0) {
+    return childTaxons;
+  }
+  else { return null }
 }
 
 var fetchParentTaxon = function (taxonSlug) {
