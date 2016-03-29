@@ -678,13 +678,15 @@ font-weight: normal;
 
 .top-box a {
   font-size: 24px;
+  margin-bottom: 1.5em;
+  display: inline-block;
 }
 
 .navigation-box {
   margin-top: 20px;
   margin-bottom: 30px;
   padding: 10px;
-  border-top: 5px solid $govuk-blue;
+  border-top: 1px solid $grey-3;
 }
 
 // CSS from gds-pub-prototype //
