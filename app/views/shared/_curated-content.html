@@ -2,10 +2,10 @@
     {% for row in curatedContent|slice(2) %}
       <div class="grid-row">
         {% for contentItem in row %}
-      <div class="column-third">
-        <a href="contentItem.localHref}}">{{ contentItem.title }}</a>
+          <div class="column-third">
+            <a href="contentItem.localHref}}">{{ contentItem.title }}</a>
+          </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
     {% endfor %}
 </div>
