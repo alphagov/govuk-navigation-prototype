@@ -24,6 +24,11 @@ function TaxonPresenter (taxonSlug, request) {
 
   this.curatedContent = this.contentListToRender.slice(0,6);
   this.latestContent  = this.contentListToRender.slice(0,3);
+
+  this.resolveViewTemplateName = function () {
+    return request.path.replace(this.taxonSlug, '').replace(/^\//, '') + this.selectedTab;
+  };
+  this.viewTemplateName = this.resolveViewTemplateName();
 }
 
 module.exports = TaxonPresenter;
