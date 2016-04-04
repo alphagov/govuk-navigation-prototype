@@ -9,8 +9,13 @@ router.get('/', function (req, res) {
 
 router.get('/taxons/:taxonSlug', function (req, res) {
   var presenter = new TaxonPresenter(req.params.taxonSlug, req);
-  res.render(presenter.selectedTab, presenter);
-})
+  res.render(presenter.viewTemplateName, presenter);
+});
+
+router.get('/mvp/:taxonSlug', function (req, res) {
+	var presenter = new TaxonPresenter(req.params.taxonSlug, req);
+  res.render(presenter.viewTemplateName, presenter);
+});
 
 // add your routes here
 

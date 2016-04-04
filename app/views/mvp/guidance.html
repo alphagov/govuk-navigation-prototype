@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "shared/_header.html" %}
+  <img src="http://cdn.meme.am/instances/500x/54047861.jpg" alt="">
+  {% include "shared/_tabs.html" %}
+
+  {% include "shared/_child-taxons.html" %}
+
+  {% include "shared/_footer.html" %}
+
+</main>
+
+{% endblock %}
+
