@@ -36,7 +36,7 @@ var fetchParentTaxon = function (taxonSlug) {
       // Strip any leading digits indicating the taxon 'level'
       title: parentPayload.title.replace(/^\d - /, ''),
       //  Convert the content store slug into one that's suitable for linking to pages within the prototype
-      localHref: parentPayload.base_path.replace(/^\/alpha-taxonomy\//, '').replace(/^\d-/, '')
+      localHref: parentPayload.base_path.replace(/^\/alpha-taxonomy\//, '')
     }
   }
   else { return null }
@@ -48,4 +48,3 @@ module.exports = {
   fetchParentTaxon: fetchParentTaxon,
   fetchCurrentTaxonTitle: fetchCurrentTaxonTitle,
 }
-

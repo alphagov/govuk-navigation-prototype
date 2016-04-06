@@ -9,7 +9,7 @@
         {% if parentTaxon %}
           <div class="footer-body">
             <p>Part of:</p>
-            <h2 class="heading-medium"><a href="#">{{parentTaxon.title}}</a></h2>
+            <h2 class="heading-medium"><a href="{{parentTaxon.localHref}}">{{parentTaxon.title}}</a></h2>
           </div>
         {% endif %}
       </div>
