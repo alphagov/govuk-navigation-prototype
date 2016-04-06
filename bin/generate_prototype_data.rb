@@ -65,14 +65,45 @@ class GeneratePrototypeData
   private
   def taxons
     @taxons ||= %w{
-      education
+      14-to-19-years
       2-childcare-and-early-years
+      3-early-years-foundation-stage-eyfs
+      3-early-years-pupil-premium
       3-early-years-settings
+      3-inspections
+      3-special-educational-needs-send
+      3-training-for-early-years-staff
       4-childminders
-      driving-and-vehicles
+      4-children-s-centres
+      4-good-practice
+      4-nurseries
+      a-level
+      being-an-hgv-operator
+      being-an-mot-tester
+      car-tax
+      cars-and-trailers
+      curriculum-and-qualifications
       driving-and-vehicle-businesses
-      running-an-mot-test-station
+      driving-and-vehicles
+      driving-vans-and-running-fleets-of-vans
+      education
+      gcse
+      highway-code
+      key-stage-3
+      learning-to-drive-or-ride
+      mot-forms
+      mot-manuals-and-notices
       mot-test-service-modernisation
+      national-curriculum
+      number-plates-and-vehicle-registration
+      phonics
+      primary
+      running-an-approved-tachograph-centre
+      running-an-mot-test-station
+      schools-and-colleges
+      statistics-research-department-information
+      teaching-people-to-drive-or-ride
+      vehicles
     }
   end
 
