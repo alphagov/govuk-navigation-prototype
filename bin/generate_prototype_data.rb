@@ -66,17 +66,17 @@ class GeneratePrototypeData
   def taxons
     @taxons ||= %w{
       14-to-19-years
-      2-childcare-and-early-years
-      3-early-years-foundation-stage-eyfs
-      3-early-years-pupil-premium
-      3-early-years-settings
-      3-inspections
-      3-special-educational-needs-send
-      3-training-for-early-years-staff
-      4-childminders
-      4-children-s-centres
-      4-good-practice
-      4-nurseries
+      childcare-and-early-years
+      early-years-foundation-stage-eyfs
+      early-years-pupil-premium
+      early-years-settings
+      inspections
+      special-educational-needs-send
+      training-for-early-years-staff
+      childminders
+      children-s-centres
+      good-practice
+      nurseries
       a-level
       being-an-hgv-operator
       being-an-mot-tester
