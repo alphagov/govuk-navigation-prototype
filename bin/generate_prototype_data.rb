@@ -66,43 +66,76 @@ class GeneratePrototypeData
   def taxons
     @taxons ||= %w{
       14-to-19-years
-      2-childcare-and-early-years
-      3-early-years-foundation-stage-eyfs
-      3-early-years-pupil-premium
-      3-early-years-settings
-      3-inspections
-      3-special-educational-needs-send
-      3-training-for-early-years-staff
-      4-childminders
-      4-children-s-centres
-      4-good-practice
-      4-nurseries
       a-level
+      annual-tests-for-buses-and-coaches
+      annual-tests-for-lorrys-buses-and-trailers
+      approved-driving-instruction-adi
       being-an-hgv-operator
       being-an-mot-tester
+      booking-tests
+      booking-tests-and-checking-licences-for-your-pupils
+      bus-and-coach-accessibility-certification-forms
       car-tax
+      cars
       cars-and-trailers
+      childcare-and-early-years
+      childminders
+      children-s-centres
       curriculum-and-qualifications
+      despatch-newsletter-for-driver-and-rider-trainers
+      drink-drive-rehabilitation
+      driving
       driving-and-vehicle-businesses
       driving-and-vehicles
+      driving-licenses
+      driving-lorries-buses-or-goods-vehicles
+      driving-test-policies-and-test-centre-rules
       driving-vans-and-running-fleets-of-vans
+      driving-with-a-disability-or-health-condition
+      early-years-foundation-stage-eyfs
+      early-years-pupil-premium
+      early-years-settings
       education
       gcse
+      get-and-check-an-mot
+      good-practice
       highway-code
+      improving-your-training-skills
+      individual-vehicle-approval-iva
+      inspections
       key-stage-3
+      large-goods-vehicle-instruction
       learning-to-drive-or-ride
+      lorries-and-buses
+      lorry-bus-or-trailer-tests-and-permits
+      moped-and-motorcycle-training
+      mot-and-vehicle-insurance
       mot-forms
       mot-manuals-and-notices
       mot-test-service-modernisation
+      motorcycle-instruction
+      motorcycle-single-vehicle-approval-msva
+      motorcycles
       national-curriculum
       number-plates-and-vehicle-registration
+      nurseries
+      operating-buses-and-coaches
+      parking-including-blue-badge
       phonics
       primary
+      public-service-vehicle-licenses-psvs
+      running-a-local-bus-service
       running-an-approved-tachograph-centre
       running-an-mot-test-station
       schools-and-colleges
+      special-educational-needs-send
+      specialist-vehicles
       statistics-research-department-information
       teaching-people-to-drive-or-ride
+      tests-and-licenses-for-lorries
+      training-for-early-years-staff
+      vehicle-recalls-and-safety-defects
+      vehicle-safety
       vehicles
     }
   end
