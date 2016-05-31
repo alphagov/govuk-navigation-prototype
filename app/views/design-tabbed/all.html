@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block head %}
+	<link href="/public/stylesheets/design-tabbed.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block page_title %}
   {{ pageTitle }}
 {% endblock %}
@@ -15,6 +19,10 @@
   {% include "shared/_all-content.html" %}
 
   {% include "shared/_child-taxons.html" %}
-</main>
 
+  {% include "shared/_footer.html" %}
+
+</main>
 {% endblock %}
+
+
