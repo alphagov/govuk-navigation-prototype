@@ -11,6 +11,8 @@ function TaxonPresenter (request, defaultView) {
   this.parentTaxon = taxonHelpers.fetchParentTaxon(this.taxonSlug);
   this.allContent  = taxonHelpers.fetchTaggedItems(this.taxonSlug);
 
+  // Used when the type of view means only a subset of all documents get
+  // rendered on a page, e.g. - guidance pages, policy pages.
   this.determineContentList = function () {
     switch (this.selectedView) {
       case 'all':
@@ -21,6 +23,9 @@ function TaxonPresenter (request, defaultView) {
   };
   this.contentListToRender = this.determineContentList();
 
+  // TODO: curated and latest content are quite design-specific - revisit these
+  // and consider whether or not to move them down into the specific templates
+  // they're used by.
   this.curatedContent = this.contentListToRender.slice(0,6);
   this.latestContent  = this.contentListToRender.slice(0,3);
 

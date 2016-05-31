@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block head %}
+	<link href="/public/stylesheets/design-tabless.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block page_title %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="breadcrumbs">
+        <ol>
+          <li><a href="/">Home</a></li>
+          {% if parentTaxon %}
+            <li><a href="{{ parentTaxon.localHref }}">{{ parentTaxon.title }}</a></li>
+          {% endif %}
+          <li>{{pageTitle}}</li>
+        </ol>
+      </div>
+
+      <h1 class="heading-xlarge">{{ pageTitle }}</h1>
+    </div>
+  </div>
+
+  <h2 class="font-medium">Filter search results </p>
+  <div class="grid-row">
+    <div class="column-third">
+      <div class="govuk-option-select">
+        <div class="container-head">
+          <label class="option-select-label" for="keywords">
+            Search
+          </label>
+        </div>
+
+        <input class="filter-field-text" type="text" name="q" id="keywords" value="" maxlength="200">
+      </div>
+
+      <div class="options-container" id="vegetables">
+        <div class="js-auto-height-inner"></div>
+      </div>
+
+      <div class="govuk-option-select">
+        <div class="container-head js-container-head">
+          <div class="option-select-label">Type</div>
+        </div>
+
+        <div class="options-container" id="vegetables">
+          <div class="js-auto-height-inner">
+            <label for="vegetables-carrot">
+              <input name="vegetables" value="carrot" id="vegetables-carrot" type="checkbox" aria-controls="" checked="checked">
+              Guidance
+            </label>
+
+            <label for="vegetables-potato">
+              <input name="vegetables" value="potato" id="vegetables-potato" type="checkbox" aria-controls="">
+              Policy
+            </label>
+
+            <label for="vegetables-swede">
+              <input name="vegetables" value="swede" id="vegetables-swede" type="checkbox" aria-controls="">
+              Statistics
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column-two-thirds">
+      <div class="pub-list">
+        <div class="sort">
+          <p class="bold-small">Sort by: <span class="sort-selected">Popular</span> &nbsp; <a href="#">Recent</a></p>
+        </div>
+        <ul>
+          {% for item in allContent %}
+            <li>
+              <a href="{{item.web_url}}">{{item.title}}</a></br>
+              <span class="font-xsmall">
+                {{ item.public_updated_at | humanizeDateTime }} &nbsp; Some descriptive text.
+              </span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
