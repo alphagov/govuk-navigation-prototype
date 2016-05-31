@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block head %}
+	<link href="/public/stylesheets/design-mvp.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block page_title %}
   {{ pageTitle }}
 {% endblock %}
@@ -12,15 +16,10 @@
 
   {% include "shared/_tabs.html" %}
 
-  {% include "shared/_curated-content.html" %}
-
-  {% include "shared/_latest-content.html" %}
+  {% include "shared/_all-content.html" %}
 
   {% include "shared/_child-taxons.html" %}
 
-  {% include "shared/_footer.html" %}
 
 </main>
-
 {% endblock %}
-

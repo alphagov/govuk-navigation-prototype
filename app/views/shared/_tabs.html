@@ -1,4 +1,4 @@
-{% set active_tab = selectedTab %}
+{% set active_tab = selectedView %}
 
 <div class="grid-row">
   <div class="column-full">
@@ -7,15 +7,15 @@
       <nav class="activity-navigation">
         <ul>
           <li>
-            <a {% if active_tab == 'guidance' %} class="current" {% endif %} href="{{taxonSlug}}?tab=guidance">Guidance and services</a>
+            <a {% if active_tab == 'guidance' %} class="current" {% endif %} href="{{taxonSlug}}?view=guidance">Guidance and services</a>
           </li>
 
           <li>
-            <a {% if active_tab == 'policy' %} class="current" {% endif %} href="{{taxonSlug}}?tab=policy">Policy</a>
+            <a {% if active_tab == 'policy' %} class="current" {% endif %} href="{{taxonSlug}}?view=policy">Policy</a>
           </li>
 
           <li>
-            <a {% if active_tab == 'all' %} class="current" {% endif %} href="{{taxonSlug}}?tab=all">Everything</a>
+            <a {% if active_tab == 'all' %} class="current" {% endif %} href="{{taxonSlug}}?view=all">Everything</a>
           </li>
         </ul>
       </nav>
