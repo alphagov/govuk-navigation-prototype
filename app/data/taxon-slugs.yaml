@@ -1,0 +1,94 @@
+---
+# Hardcoded list of taxons to make available in the prototype. See
+# https://collections-publisher.publishing.service.gov.uk/taxons for a complete
+# list of every taxon in the content store. The list below could probably be
+# fetched dynamically but for now its useful to explicitly declare the taxons -
+# its helpful when testing changes to limit the retrieval to a subset.
+
+taxon_slugs:
+  - 14-to-19-years
+  - a-level
+  - annual-tests-for-lorrys-buses-and-trailers
+  - annual-tests-for-buses-and-coaches
+  - approved-driving-instruction-adi
+  - being-an-hgv-operator
+  - being-an-mot-tester
+  - booking-tests
+  - booking-tests-and-checking-licences-for-your-pupils
+  - bus-and-coach-accessibility-certification-forms
+  - car-tax
+  - cars
+  - cars-and-trailers
+  - certifying-a-vehicle-for-the-tir-international-transport-of-goods
+  - childcare-and-early-years
+  - childminders
+  - children-s-centres
+  - curriculum-and-qualifications
+  - despatch-newsletter-for-driver-and-rider-trainers
+  - drink-drive-rehabilitation
+  - drivers-hours-rules-and-guidance
+  - driving
+  - driving-and-vehicle-businesses
+  - driving-and-vehicles
+  - driving-licenses
+  - driving-lorries-buses-or-goods-vehicles
+  - driving-test-policies-and-test-centre-rules
+  - driving-vans-and-running-fleets-of-vans
+  - driving-with-a-disability-or-health-condition
+  - early-years-census
+  - early-years-foundation-stage-eyfs
+  - early-years-pupil-premium
+  - early-years-settings
+  - education
+  - free-early-education
+  - gcse
+  - get-and-check-an-mot
+  - good-practice
+  - highway-code
+  - improving-your-training-skills
+  - individual-vehicle-approval-iva
+  - inspections
+  - international-road-freight
+  - key-stage-3
+  - large-goods-vehicle-instruction
+  - learning-to-drive-or-ride
+  - lorries-and-buses
+  - lorry-bus-or-trailer-tests-and-permits
+  - mot-and-vehicle-insurance
+  - mot-forms
+  - mot-manuals-and-notices
+  - mot-test-service-modernisation
+  - modernisation-network-services-newsletters
+  - moped-and-motorcycle-training
+  - motorcycle-single-vehicle-approval-msva
+  - motorcycle-instruction
+  - motorcycles
+  - nannies-and-au-pairs
+  - national-curriculum
+  - number-plates-and-vehicle-registration
+  - nurseries
+  - operating-buses-and-coaches
+  - parking-including-blue-badge
+  - phonics
+  - primary
+  - public-service-vehicle-licenses-psvs
+  - running-a-local-bus-service
+  - running-an-approved-tachograph-centre
+  - running-an-authorised-testing-facility
+  - running-an-mot-test-station
+  - running-an-early-years-setting
+  - schools-and-colleges
+  - schools-and-pre-schools
+  - special-educational-needs-send
+  - specialist-vehicles
+  - statistics-research-department-information
+  - taxis
+  - teaching-people-to-drive-or-ride
+  - tests-and-licenses-for-lorries
+  - the-driver-certificate-of-professional-competence-cpc
+  - training-for-early-years-staff
+  - transporting-goods
+  - vehicle-plating
+  - vehicle-recalls-and-safety-defects
+  - vehicle-safety
+  - vehicles
