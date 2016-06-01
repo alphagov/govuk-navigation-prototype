@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  <link href="/public/stylesheets/design-tabless.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block page_title %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="breadcrumbs">
+        <ol>
+          <li><a href="/">Home</a></li>
+          {% if parentTaxon %}
+            <li><a href="{{ parentTaxon.localHref }}">{{ parentTaxon.title }}</a></li>
+          {% endif %}
+          <li>{{pageTitle}}</li>
+        </ol>
+      </div>
+
+      <h1 class="heading-xlarge">{{ pageTitle }}</h1>
+    </div>
+  </div>
+
+  <div class="top-wrapper">
+    <div class="top-box">
+      <p>
+        <span class="bold-medium">Top &nbsp; <span class="font-small"><a href="{{ taxonSlug }}?view=all">See all</a></span>
+      </p>
+      <ol class="list-number">
+        {% for item in curatedContent %}
+          <li><a href="{{item.web_url}}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ol>
+    </div>
+
+    <div class="recent-pubs">
+      <p>
+        <span class="bold-medium">Latest &nbsp; <span class="font-small"><a href="{{ taxonSlug }}?view=all">See all</a></span>
+      </p>
+
+      {% for item in latestContent %}
+        <div class="a-pub">
+          <a href="{{item.web_url}}">{{item.title}}</a></br>
+          <span class="font-xsmall">{{ item.public_updated_at | humanizeDateTime }} &nbsp; DfE &nbsp; Guidance</span></br>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="search">
+    <form action="/search">
+      <input type="hidden" name="filter_manual[]" value="/guidance/content-design">
+      <input id="search-box" type="text" name="q">
+      <button class="search-button" type="submit"><span class="heading-large">Search</button>
+    </form>
+  </div>
+
+  {% include "shared/_child-taxons.html" %}
+
+  {% include "shared/_footer.html" %}
+
+</main>
+
+{% endblock %}
