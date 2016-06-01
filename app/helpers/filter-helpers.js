@@ -18,7 +18,7 @@ var sectionFilter = function (allContent, pageSection) {
     if (formatLookup[mappingSearchString] == pageSection) { return true; }
     else { return false; }
   })
-  console.log("Filtered out " + filteredList.length);
+  console.log("Filter contains " + filteredList.length + " items");
   return filteredList;
 }
 

@@ -1,4 +1,4 @@
-var taxonHelpers = require('../helpers/taxon-helpers.js');
+var taxonHelpers = require('../helpers/taxonomy-data-helpers.js');
 var filterHelpers = require('../helpers/filter-helpers.js');
 
 function TaxonPresenter (request, defaultView) {
@@ -6,7 +6,7 @@ function TaxonPresenter (request, defaultView) {
   this.selectedView = request.query.view || defaultView;
   this.pageTitle = taxonHelpers.fetchCurrentTaxonTitle(this.taxonSlug);
 
-  // Fetch appropriate taxonomy data
+  // Fetch essential taxonomy data
   this.childTaxons = taxonHelpers.fetchChildTaxons(this.taxonSlug);
   this.parentTaxon = taxonHelpers.fetchParentTaxon(this.taxonSlug);
   this.allContent  = taxonHelpers.fetchTaggedItems(this.taxonSlug);

@@ -5,20 +5,24 @@ var taxonomyData = JSON.parse(fs.readFileSync("app/data/taxonomy-data.json"));
 var fetchCurrentTaxonTitle = function (taxonSlug) {
   return taxonomyData[taxonSlug].title;
 }
+
 // Retrieve content items tagged to a specific taxon.
 var fetchTaggedItems = function (taxonSlug) {
   return taxonomyData[taxonSlug]["tagged_content"];
 }
 
-// Retrieve array containing title and modified slug of all child taxons.
+// Retrieve array containing title, modified slug and 3 example pieces of
+// content for all child taxons.
 var fetchChildTaxons = function (taxonSlug) {
   var childTaxons = taxonomyData[taxonSlug]["children"];
   childTaxons = childTaxons.map( function (taxon) {
+    slug = taxon.base_path.replace(/^\/alpha-taxonomy\//, '')
     return {
       // Strip any leading digits indicating the taxon 'level'
       title: taxon.title.replace(/^\d - /, ''),
       //  Convert the content store slug into one that's suitable for linking to pages within the prototype
-      localHref: taxon.base_path.replace(/^\/alpha-taxonomy\//, ''),
+      localHref: slug,
+      sampleContent: taxonomyData[slug].tagged_content.slice(0,3)
     }
   });
 
