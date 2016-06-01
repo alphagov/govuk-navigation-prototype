@@ -101,7 +101,7 @@
 }
 
 .content-title h2 {
-  font-size: 27px;
+  font-size: 24px;
   font-weight: bold;
 }
 .content-title a {
@@ -608,7 +608,7 @@ width: 60%;
   text-align: left;
   background: $govuk-blue;
   vertical-align: top;
-  min-height: 250px;
+  min-height: 350px;
 }
 
 .top-box a, a.visited {
@@ -632,7 +632,7 @@ width: 60%;
 
 .recent-pubs {
 display: inline-block;
- padding: 10px;
+ padding: 0 0 0 0;
   width: 30%;
   margin: 20px 0 10px 10px;
 }
