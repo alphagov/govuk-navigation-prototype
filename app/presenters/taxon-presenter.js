@@ -1,4 +1,4 @@
-var taxonHelpers = require('../helpers/taxon-helpers.js');
+var taxonHelpers = require('../helpers/taxonomy-data-helpers.js');
 var filterHelpers = require('../helpers/filter-helpers.js');
 
 function TaxonPresenter (request, defaultView) {
