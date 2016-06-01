@@ -6,7 +6,7 @@ function TaxonPresenter (request, defaultView) {
   this.selectedView = request.query.view || defaultView;
   this.pageTitle = taxonHelpers.fetchCurrentTaxonTitle(this.taxonSlug);
 
-  // Fetch appropriate taxonomy data
+  // Fetch essential taxonomy data
   this.childTaxons = taxonHelpers.fetchChildTaxons(this.taxonSlug);
   this.parentTaxon = taxonHelpers.fetchParentTaxon(this.taxonSlug);
   this.allContent  = taxonHelpers.fetchTaggedItems(this.taxonSlug);
