@@ -599,40 +599,36 @@ font-weight: normal;
 
 .top-box {
 display: inline-block;
-width: 60%;
+width: 45%;
   margin-bottom: 30px;
   margin-left: -600px;
-  padding: 30px 20px 30px 600px;
+  padding: 30px 20px 30px 550px;
   text-align: left;
-  background: $govuk-blue;
+  background: $grey-3;
   vertical-align: top;
-  min-height: 350px;
 }
 
 .top-box a, a.visited {
   margin-bottom: 1.5em;
   text-decoration: underline;
-  color: white;
 }
 
 .top-box ol {
   margin-top: -20px;
   font-weight: bold;
   padding: 20px 0 0 30px;
-  color: white;
   line-height: 200%;
   font-size: 22px;
 }
 
 .top-box span {
-  color: white;
 }
 
 .recent-pubs {
 display: inline-block;
- padding: 0 0 0 0;
-  width: 30%;
-  margin: 20px 0 10px 10px;
+ padding: 20px 0 0 0;
+  width: 45%;
+  margin: 20px 0 10px 40px;
 }
 
 .recent-pubs ul {
