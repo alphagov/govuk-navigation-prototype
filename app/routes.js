@@ -19,8 +19,8 @@ router.get('/mvp/:taxonSlug', function (req, res) {
 
 router.get('/tabless/:taxonSlug', function (req, res) {
   var presenter = new TaxonPresenter(req, 'base');
-  presenter.curatedContent = presenter.allContent.slice(-4);
-  presenter.latestContent = presenter.allContent.slice(0,3);
+  presenter.curatedContent = presenter.allContent.slice(4);
+  presenter.latestContent = presenter.allContent.slice(-3).reverse();
   res.render(presenter.viewTemplateName, presenter);
 });
 

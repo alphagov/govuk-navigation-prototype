@@ -6,9 +6,12 @@ var fetchCurrentTaxonTitle = function (taxonSlug) {
   return taxonomyData[taxonSlug].title;
 }
 
-// Retrieve content items tagged to a specific taxon.
+// Retrieve content items tagged to a specific taxon, ordered public_updated_at
+// ascending.
 var fetchTaggedItems = function (taxonSlug) {
-  return taxonomyData[taxonSlug]["tagged_content"];
+  return taxonomyData[taxonSlug]["tagged_content"].sort(function(a, b) {
+    return new Date(a.public_updated_at) - new Date(b.public_updated_at);
+  });
 }
 
 // Retrieve array containing title, modified slug and 3 example pieces of
