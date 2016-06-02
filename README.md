@@ -1,39 +1,48 @@
-# GOV.UK Prototype kit
+# Navigation Prototype
 
-## News
+This app serves up prototype navigation flows for the work-in-progress GOV.UK
+taxonomy.
 
-**Upgrading from version 1 to 2:** the latest version of the kit (2.0.0 and later) is not compatible with previous versions. If you update your old prototypes you'll need to [convert them as well](https://github.com/alphagov/govuk_prototype_kit/blob/master/docs/updating-the-kit.md).
+## Screenshots
 
-## About the prototype kit
+None yet - the navigation screens are in an ongoing state of flux so any
+screenshots included here would very quickly be out of date.
 
-The prototype kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
+## Nomenclature
 
-Read the [project principles](docs/principles.md).
+- **taxon**: a single node within the taxonomy.
 
-> You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately. 
+## Technical documentation
 
-## Installation instructions
+This is a node app built using the
+[govuk_prototype_kit](https://github.com/alphagov/govuk_prototype_kit). It
+serves up several endpoints, each containing a specific design variation. These
+endpoints accept a taxon slug as a parameter and subsequently display a page
+representing that level of the taxonomy.
 
-- [Installation guide for new users (non technical)](docs/install/introduction.md)
-- [Installation guide for developers (technical)](docs/developer-install-instructions.md)
+The taxonomy data represented in these pages is cached locally in
+[app/data/taxonomy-data.json](app/data/taxonomy-data.json). This saves us from
+having to make multiple calls to the publishing API to render a single page in
+the prototype. The Ruby script
+[bin/generate_prototype_data.rb](bin/generate_prototype_data.rb) regenerates
+the taxonomy data file, picking up the latest changes from the publishing API.
+The taxons that are imported by this script are hard-coded in
+[app/data/taxon-slugs.yaml](app/data/taxon-slugs.yaml).
 
-## Guides
+### Dependencies
 
-1. [Setting up git](docs/guides/setting-up-git.md)
-1. [Publishing on the web (Heroku)](docs/guides/publishing-on-heroku.md)
+See package.json.
 
-## Other documentation
+### Running the application
 
-- [Prototype kit principles](docs/principles.md)
-- [Making pages](docs/making-pages.md)
-- [Writing CSS](docs/writing-css.md)
-- [Updating the kit to the latest version](docs/updating-the-kit.md)
-- [Tips and tricks](docs/tips-and-tricks.md)
-- [Creating routes (server-side programming)](docs/creating-routes.md)
+Run `npm install` if running for the first time or if you've added anything to
+package.json.
 
-## Community
+`node start`
 
-We have two Slack channels for the Prototype kit. You'll need a government email address to join them.
+Open the app at http://localhost:3000/
 
-* [Slack channel for users of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit/)
-* [Slack channel for developers of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit-dev/)
+## Licence
+
+[MIT License](LICENCE)
+
