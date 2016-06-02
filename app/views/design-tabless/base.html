@@ -31,13 +31,30 @@
   <div class="top-wrapper">
     <div class="top-box">
       <p>
-        <span class="bold-medium">Top &nbsp; <span class="font-small"><a href="{{ taxonSlug }}?view=all">See all</a></span>
+        <span class="heading-medium">Top &nbsp; <span class="font-small"><a href="{{ taxonSlug }}?view=all">See all</a></span>
       </p>
+
+      <div class="top-l">
       <ol class="list-number">
         {% for item in curatedContent %}
-          <li><a href="{{item.web_url}}">{{ item.title }}</a></li>
+        <li><a href="{{item.web_url}}">{{ item.title }}</a></li>
         {% endfor %}
-      </ol>
+        </ol>
+
+
+        <!--
+        {% for item in curatedContent %}
+        {% endfor %}
+      -->
+  </div>
+    <div class="top-r">
+      <ol start="3" class="list-number">
+        {% for item in curatedContent %}
+        <li><a href="{{item.web_url}}">{{ item.title }}</a></li>
+        {% endfor %}
+        </ol>
+
+    </div>
     </div>
 
     <div class="recent-pubs">

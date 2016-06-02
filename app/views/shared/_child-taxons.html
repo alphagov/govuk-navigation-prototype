@@ -9,10 +9,13 @@
         </div>
 
         <div class="content-body">
-          {% for contentItem in taxon.sampleContent %}
-          <p><a href="{{ contentItem.web_url }}">{{ contentItem.title }}</a></p>
-          {% endfor %}
-          <p class="show-all"><a href="{{localHref}}">View more</a></p>
+          <ul>
+            {% for contentItem in taxon.sampleContent %}
+              <li><a href="{{ contentItem.web_url }}">{{ contentItem.title }}</a></li>
+            {% endfor %}
+
+            <li><p class="show-all"><a href="{{localHref}}">View more</a></p></li>
+          </ul>
         </div>
       </div>
     {% endfor %}
