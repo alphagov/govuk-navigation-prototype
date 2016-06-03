@@ -106,11 +106,7 @@ class GeneratePrototypeData
   end
 
   def hostname
-    if ENV["DEV"]
-      "http://content-store.dev.gov.uk"
-    else
-      "https://www.gov.uk"
-    end
+    "https://www.gov.uk"
   end
 end
 
