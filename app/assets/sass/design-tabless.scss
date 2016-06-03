@@ -96,7 +96,7 @@ margin-bottom: -1em;
 .content-title {
   display: inline-block;
   vertical-align: top;
-  width: 45%;
+  width: 33%;
   clear: left;
   margin-right: 20px;
   margin-top: -13px;
@@ -114,11 +114,10 @@ margin-bottom: -1em;
   display: inline-block;
   padding-top: 30px;
   padding-bottom: 3px;
-  width: 45%;
+  width: 60%;
   line-height: 100%;
   margin-top: -3px;
   font-size: 19px;
-  display: none;
 }
 
 .content-body a {
@@ -130,7 +129,7 @@ margin-bottom: -1em;
   display: inline-block;
   padding-top: 30px;
   padding-bottom: 3px;
-  width: 45%;
+  width: 60%;
   line-height: 80%;
   margin-top: -3px;
 }
@@ -138,7 +137,7 @@ margin-bottom: -1em;
 .footer-title {
   vertical-align: top;
   display: inline-block;
-  width: 45%;
+  width: 33%;
   clear: left;
   margin-right: 20px;
   margin-top: -13px;
@@ -167,7 +166,7 @@ margin-bottom: -1em;
 }
 
 .content-body li {
-  font-size: 22px;
+  font-size: 19px;
   line-height: 200%;
 }
 
@@ -613,6 +612,7 @@ font-weight: normal;
   text-align: left;
   vertical-align: top;
   color: white;
+  min-height: 350px;
 }
 
 .top-box a, a.visited {
