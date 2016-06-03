@@ -41,22 +41,22 @@
           {% endfor %}
         </ol>
       </div>
-    </div>
 
-    <div class="top-r">
-      <ol start="5" class="list-number">
-        {% for item in curatedContent %}
-        <li><a href="{{item.web_url}}">{{ item.title }}</a></li>
-        {% endfor %}
+      <div class="top-r">
+        <ol start="5" class="list-number">
+          {% for item in curatedContent %}
+            <li><a href="{{item.web_url}}">{{ item.title }}</a></li>
+          {% endfor %}
         </ol>
-    </div>
+      </div>
 
-    <div class="search">
-      <form action="/search">
-        <input type="hidden" name="filter_manual[]" value="/guidance/content-design">
-        <input id="search-box" type="text" name="q">
-        <button class="search-button" type="submit"><span class="heading-large">Search</button>
-      </form>
+      <div class="search">
+        <form action="/search">
+          <input type="hidden" name="filter_manual[]" value="/guidance/content-design">
+          <input id="search-box" type="text" name="q">
+          <button class="search-button" type="submit"><span class="heading-large">Search</button>
+        </form>
+      </div>
     </div>
 
     <div class="recent-pubs">
@@ -72,7 +72,6 @@
       {% endfor %}
     </div>
   </div>
-
   {% include "shared/_child-taxons.html" %}
 
   {% include "shared/_footer.html" %}
@@ -80,3 +79,4 @@
 </main>
 
 {% endblock %}
+
