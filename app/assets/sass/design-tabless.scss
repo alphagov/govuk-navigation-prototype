@@ -601,6 +601,7 @@ font-weight: normal;
 
 .top-box {
   display: inline-block;
+  margin-top: 5px;
   width: 60%;
   margin-bottom: 30px;
   margin-left: -600px;
@@ -619,8 +620,11 @@ font-weight: normal;
   margin-top: -20px;
   font-weight: bold;
   padding: 20px 0 0 0px;
-  line-height: 200%;
   font-size: 19px;
+}
+
+.top-box li {
+  margin-bottom: 15px;
 }
 
 .top-box span {
@@ -644,7 +648,6 @@ float: right;
 }
 
 .recent-pubs ul {
-  margin-top: 25px;
     line-height: 1.5;
 }
 
@@ -661,8 +664,8 @@ float: right;
 }
 
 .a-pub {
-  margin-bottom: 10px;
-  font-size: 19px;
+  margin-top: 23px;
+  margin-bottom: 9px;
   font-weight: bold;
 }
 
