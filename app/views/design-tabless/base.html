@@ -47,13 +47,20 @@
         {% endfor %}
       -->
   </div>
+
     <div class="top-r">
       <ol start="5" class="list-number">
         {% for item in curatedContent %}
         <li><a href="{{item.web_url}}">{{ item.title }}</a></li>
         {% endfor %}
         </ol>
-
+    </div>
+    <div class="search">
+      <form action="/search">
+        <input type="hidden" name="filter_manual[]" value="/guidance/content-design">
+        <input id="search-box" type="text" name="q">
+        <button class="search-button" type="submit"><span class="heading-large">Search</button>
+      </form>
     </div>
     </div>
 
@@ -71,16 +78,7 @@
     </div>
   </div>
 
-  <div class="search">
-    <form action="/search">
-      <input type="hidden" name="filter_manual[]" value="/guidance/content-design">
-      <input id="search-box" type="text" name="q">
-      <button class="button"><span class="heading-small">Search</span></button>
-      <!--
-      <button class="search-button" type="submit"><span class="heading-large">Search</button>
-      -->
-    </form>
-  </div>
+
 
   {% include "shared/_child-taxons.html" %}
 
