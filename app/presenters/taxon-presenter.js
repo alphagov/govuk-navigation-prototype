@@ -27,7 +27,7 @@ function TaxonPresenter (request, defaultView) {
   // and consider whether or not to move them down into the specific templates
   // they're used by.
   this.curatedContent = this.contentListToRender.slice(0,6);
-  this.latestContent  = this.contentListToRender.slice(0,3);
+  this.latestContent  = this.contentListToRender.slice(-3).reverse();
 
   this.resolveViewTemplateName = function () {
     return request.path.replace(this.taxonSlug, '').replace(/^\//, 'design-') + this.selectedView;
