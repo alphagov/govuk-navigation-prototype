@@ -23,10 +23,13 @@ representing that level of the taxonomy.
 The taxonomy data represented in these pages is cached locally in
 [app/data/taxonomy-data.json](app/data/taxonomy-data.json). This saves us from
 having to make multiple calls to the publishing API to render a single page in
-the prototype. The Ruby script
+the prototype.
+
+The Ruby script
 [bin/generate_prototype_data.rb](bin/generate_prototype_data.rb) regenerates
-the taxonomy data file, picking up the latest changes from the publishing API.
-The taxons that are imported by this script are hard-coded in
+the taxonomy data file. It uses the production API endpoints for the
+publishing-api, content-store and rummager to fetch changes. The taxons that
+are imported by this script are hard-coded in
 [app/data/taxon-slugs.yaml](app/data/taxon-slugs.yaml).
 
 ### Dependencies
