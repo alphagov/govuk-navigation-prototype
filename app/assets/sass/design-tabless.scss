@@ -17,13 +17,12 @@
     width: 100%;
 }
 
-
 .search {
   margin-left: -20px;
 }
 #search-box  {
-    width: 70%;
-    height: 36px;
+    width: 50%;
+    height: 34px;
     border: 2px solid $grey-2;
     margin: 0px 0 30px 0;
 }
@@ -38,7 +37,8 @@
 
 .search-button {
     position: relative;
-    top: 5px;
+    top: 7px;
+    left: -5px;
     width: 40px;
     height: 40px;
     border: 2px solid #0b0c0c;
@@ -96,7 +96,7 @@ margin-bottom: -1em;
 .content-title {
   display: inline-block;
   vertical-align: top;
-  width: 45%;
+  width: 33%;
   clear: left;
   margin-right: 20px;
   margin-top: -13px;
@@ -114,11 +114,10 @@ margin-bottom: -1em;
   display: inline-block;
   padding-top: 30px;
   padding-bottom: 3px;
-  width: 45%;
+  width: 60%;
   line-height: 100%;
   margin-top: -3px;
   font-size: 19px;
-  display: none;
 }
 
 .content-body a {
@@ -130,7 +129,7 @@ margin-bottom: -1em;
   display: inline-block;
   padding-top: 30px;
   padding-bottom: 3px;
-  width: 45%;
+  width: 60%;
   line-height: 80%;
   margin-top: -3px;
 }
@@ -138,7 +137,7 @@ margin-bottom: -1em;
 .footer-title {
   vertical-align: top;
   display: inline-block;
-  width: 45%;
+  width: 33%;
   clear: left;
   margin-right: 20px;
   margin-top: -13px;
@@ -152,6 +151,7 @@ margin-bottom: -1em;
 .footer-title a {
   text-decoration: none;
 }
+
 .footer-body p {
   font-size: 19px;
   margin-bottom: -30px;
@@ -167,7 +167,7 @@ margin-bottom: -1em;
 }
 
 .content-body li {
-  font-size: 22px;
+  font-size: 19px;
   line-height: 200%;
 }
 
@@ -613,6 +613,7 @@ font-weight: normal;
   text-align: left;
   vertical-align: top;
   color: white;
+  min-height: 350px;
 }
 
 .top-box a, a.visited {
