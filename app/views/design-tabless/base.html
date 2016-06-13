@@ -29,7 +29,12 @@
   </div>
 
   <div class="top-wrapper">
+    {% if childTaxons %}
     <div class="top-box">
+    {% else %}
+    <div class="top-box2">
+    {% endif %}
+
       <p>
         <span class="heading-medium">Top &nbsp;</span>
         <span class="font-small"><a href="{{ taxonSlug }}?view=all">See all</a></span>
@@ -52,8 +57,11 @@
       </div>
     </div>
 
-
+    {% if childTaxons %}
     <div class="recent-pubs">
+    {% else %}
+    <div class="recent-pubs2">
+    {% endif %}
       <p>
         <span class="bold-medium">Latest &nbsp;</span>
         <span class="font-small"><a href="{{ taxonSlug }}?view=all">See all</a></span>
@@ -84,4 +92,3 @@
 </main>
 
 {% endblock %}
-
