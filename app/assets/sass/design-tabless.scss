@@ -21,7 +21,7 @@
   margin-left: -20px;
 }
 #search-box  {
-    width: 50%;
+    width: 60%;
     height: 34px;
     border: 2px solid $grey-2;
     margin: 0px 0 30px 0;
@@ -602,6 +602,43 @@ font-weight: normal;
   margin-bottom: 30px;
 }
 
+// Lowest hierarchy level //
+
+.top-box2 {
+  display: inline-block;
+  margin-top: 5px;
+  width: 60%;
+  margin-bottom: 10px;
+  margin-left: -1000px;
+  padding: 30px 20px 10px 1000px;
+  background: $govuk-blue;
+  text-align: left;
+  vertical-align: top;
+  color: white;
+  min-height: 350px;
+  display: none;
+}
+
+.top-box2 a, a.visited {
+  margin-bottom: 1.5em;
+  color: white;
+}
+
+.top-box2 ol {
+  margin-top: -20px;
+  padding: 20px 0 0 0px;
+  font-size: 19px;
+  color: white;
+
+}
+
+.top-box2 li {
+  margin-bottom: 15px;
+}
+
+// Lowest hierarchy level ^ //
+
+
 .top-box {
   display: inline-block;
   margin-top: 5px;
@@ -652,6 +689,15 @@ float: right;
   width: 35%;
   margin: 30px 0 10px 0px;
 }
+
+.recent-pubs2 {
+float: right;
+ padding: 0px;
+  width: 35%;
+  margin: 30px 0 10px 0px;
+  display: none;
+}
+
 
 .recent-pubs ul {
     line-height: 1.5;
