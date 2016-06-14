@@ -84,6 +84,11 @@
     </form>
   </div>
 
+  {% if not childTaxons %}
+    {% for item in allContent %}
+      <p><a href="{{item.web_url}}">{{ item.title }}</a></p>
+    {% endfor %}
+  {% endif %}
 
   {% include "shared/_child-taxons.html" %}
 
