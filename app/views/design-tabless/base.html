@@ -86,7 +86,7 @@
 
   {% if not childTaxons %}
     {% for item in allContent %}
-      <p><a href="{{item.web_url}}">{{ item.title }}</a></p>
+    <p><a href="{{item.web_url}}">{{ item.title }} 🐼  {{ item.display_type or item.format|replace("_", " ")|title }}</a></p>
     {% endfor %}
   {% endif %}
 
