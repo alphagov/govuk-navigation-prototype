@@ -74,8 +74,8 @@ class GeneratePrototypeData
   end
 
   def content_items_tagged_to(taxon_slug)
-    content_endpoint = URI "#{hostname}/api/incoming-links/alpha-taxonomy/#{taxon_slug}?types[]=alpha_taxons"
-    JSON.parse(Net::HTTP.get content_endpoint)["alpha_taxons"]
+    content_endpoint = URI "#{hostname}/api/incoming-links/alpha-taxonomy/#{taxon_slug}?types[]=taxons"
+    JSON.parse(Net::HTTP.get content_endpoint)["taxons"]
   end
 
   def add_timestamps_to(content_item)
