@@ -23,8 +23,8 @@ class GeneratePrototypeData
       children_documents = JSON.parse(Net::HTTP.get children_endpoint)["parent"]
 
       puts "Getting tagged content items..."
-      content_endpoint = URI "#{hostname}/api/incoming-links/alpha-taxonomy/#{taxon_slug}?types[]=alpha_taxons"
-      content_items    = JSON.parse(Net::HTTP.get content_endpoint)["alpha_taxons"]
+      content_endpoint = URI "#{hostname}/api/incoming-links/alpha-taxonomy/#{taxon_slug}?types[]=taxons"
+      content_items    = JSON.parse(Net::HTTP.get content_endpoint)["taxons"]
 
       puts "Getting format and display_type for each content item..."
       content_items.each do |content_item|
