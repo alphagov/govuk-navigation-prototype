@@ -1,6 +1,11 @@
 # Navigation Prototype
 
-This app serves up prototype navigation flows for the work-in-progress GOV.UK
+**~~ THIS APPLICATION IS NOW RETIRED ~~**
+
+It has been replaced by [`govuk-nav-prototype`](https://github.com/alphagov/govuk-nav-prototype),
+which is a prototype rewritten in Rails.
+
+This app used to serve up prototype navigation flows for the work-in-progress GOV.UK
 taxonomy.
 
 ## Screenshots
